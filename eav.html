@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magento 2 Database - EAV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+        
+        /* Mobile-first responsive sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: -250px;
+            width: 250px;
+            z-index: 1000;
+            padding: 20px 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            transition: left 0.3s ease;
+            border-right: 1px solid #dee2e6;
+        }
+        
+        .sidebar.show {
+            left: 0;
+        }
+        
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .sidebar-overlay.show {
+            display: block;
+        }
+        
+        .main-content {
+            margin-left: 0;
+            padding: 20px 15px;
+        }
+        
+        /* Mobile hamburger menu */
+        .mobile-menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: #0b5ed7;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Close button in sidebar */
+        .sidebar-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #6c757d;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .nav-link {
+            color: #333;
+        }
+        
+        .nav-link.active {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        
+        .table-container {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        h3 {
+            margin-top: 25px;
+            color: #0d6efd;
+        }
+        
+        .table-description {
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive breakpoints */
+        @media (min-width: 768px) {
+            .sidebar {
+                left: 0;
+                position: fixed;
+            }
+            
+            .main-content {
+                margin-left: 250px;
+                padding: 20px;
+            }
+            
+            .mobile-menu-toggle {
+                display: none;
+            }
+            
+            .sidebar-overlay {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .sidebar-close {
+                display: block;
+            }
+            
+            .main-content {
+                padding-top: 70px;
+            }
+            
+            h1.h2 {
+                font-size: 1.5rem;
+            }
+            
+            .table-responsive {
+                font-size: 0.875rem;
+            }
+            
+            .alert {
+                font-size: 0.9rem;
+            }
+            
+            pre {
+                font-size: 0.75rem;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 70px 10px 20px;
+            }
+            
+            h1.h2 {
+                font-size: 1.25rem;
+            }
+            
+            .table-responsive {
+                font-size: 0.8rem;
+            }
+            
+            pre {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile menu toggle -->
+    <button class="mobile-menu-toggle d-md-none" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="sidebar">
+                <button class="sidebar-close" id="sidebarClose">&times;</button>
+                <div class="position-sticky pt-3">
+                    <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Modules</span>
+                    </h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sales.html">
+                                Sales & Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalog.html">
+                                Catalog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="customer.html">
+                                Customer
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="eav.html">
+                                EAV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inventory.html">
+                                Inventory
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cms.html">
+                                CMS & Content
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">EAV (Entity-Attribute-Value) Database Structure</h1>
+                </div>
+
+                <div class="overview">
+                    <p>
+                        The EAV (Entity-Attribute-Value) pattern is a fundamental database design pattern used extensively in Magento 2. 
+                        It provides flexibility by allowing entities to have an unlimited number of attributes without requiring 
+                        database schema changes. This is particularly important for products and customers, which may have different 
+                        sets of attributes based on their type or category.
+                    </p>
+                    
+                    <div class="alert alert-primary">
+                        <h4>What is EAV?</h4>
+                        <p>
+                            In a traditional database design, each attribute of an entity would be a column in a table. 
+                            In the EAV model, attributes are stored as rows in separate tables, allowing for:
+                        </p>
+                        <ul>
+                            <li>Dynamic addition of attributes without schema changes</li>
+                            <li>Different sets of attributes for different entity types</li>
+                            <li>Multi-value attributes</li>
+                            <li>Attribute-specific validation rules</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Key Relationships</h3>
+                    <img src="images/eav-relationships.svg" alt="EAV Tables Relationships" style="max-width: 800px;" class="img-fluid mt-3 mb-4">
+                    <p class="text-muted"><em>Note: This is a simplified diagram showing the main relationships.</em></p>
+
+                    <h2>Core EAV Tables</h2>
+
+                    <div class="table-container">
+                        <h3>eav_entity_type</h3>
+                        <p class="table-description">
+                            Defines the entity types that use the EAV model (e.g., product, customer, category).
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>entity_type_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entity_type_code</strong></td>
+                                        <td>varchar</td>
+                                        <td>Unique code for the entity type (e.g., 'catalog_product', 'customer')</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entity_model</strong></td>
+                                        <td>varchar</td>
+                                        <td>PHP class that handles this entity type</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_model</strong></td>
+                                        <td>varchar</td>
+                                        <td>PHP class that handles attributes for this entity type</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entity_table</strong></td>
+                                        <td>varchar</td>
+                                        <td>Main table for this entity type</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>value_table_prefix</strong></td>
+                                        <td>varchar</td>
+                                        <td>Prefix for value tables</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>additional_attribute_table</strong></td>
+                                        <td>varchar</td>
+                                        <td>Table for additional attribute metadata</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>eav_attribute</h3>
+                        <p class="table-description">
+                            Defines attributes for all entity types. Each attribute has a unique ID and code.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>attribute_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entity_type_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to eav_entity_type.entity_type_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_code</strong></td>
+                                        <td>varchar</td>
+                                        <td>Unique code for the attribute (e.g., 'name', 'price')</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_model</strong></td>
+                                        <td>varchar</td>
+                                        <td>PHP class that handles this attribute</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>backend_model</strong></td>
+                                        <td>varchar</td>
+                                        <td>PHP class for backend operations</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>backend_type</strong></td>
+                                        <td>varchar</td>
+                                        <td>Data type (varchar, int, decimal, text, datetime, static)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>frontend_model</strong></td>
+                                        <td>varchar</td>
+                                        <td>PHP class for frontend display</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>frontend_input</strong></td>
+                                        <td>varchar</td>
+                                        <td>Input type (text, textarea, select, etc.)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>frontend_label</strong></td>
+                                        <td>varchar</td>
+                                        <td>Default label for the attribute</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>source_model</strong></td>
+                                        <td>varchar</td>
+                                        <td>PHP class for attribute options</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>is_required</strong></td>
+                                        <td>smallint</td>
+                                        <td>Whether the attribute is required</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>is_user_defined</strong></td>
+                                        <td>smallint</td>
+                                        <td>Whether the attribute was created by a user</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>default_value</strong></td>
+                                        <td>text</td>
+                                        <td>Default value for the attribute</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>is_unique</strong></td>
+                                        <td>smallint</td>
+                                        <td>Whether the attribute value must be unique</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>eav_attribute_set</h3>
+                        <p class="table-description">
+                            Groups attributes into sets. For example, different product types may use different attribute sets.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>attribute_set_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entity_type_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to eav_entity_type.entity_type_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_set_name</strong></td>
+                                        <td>varchar</td>
+                                        <td>Name of the attribute set</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>sort_order</strong></td>
+                                        <td>smallint</td>
+                                        <td>Display order</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>eav_attribute_group</h3>
+                        <p class="table-description">
+                            Groups attributes within an attribute set. For example, "General Information", "Prices", etc.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>attribute_group_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_set_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to eav_attribute_set.attribute_set_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_group_name</strong></td>
+                                        <td>varchar</td>
+                                        <td>Name of the attribute group</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>sort_order</strong></td>
+                                        <td>smallint</td>
+                                        <td>Display order</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>default_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Whether this is the default group</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>eav_entity_attribute</h3>
+                        <p class="table-description">
+                            Maps attributes to attribute sets and groups. This table defines which attributes belong to which sets and groups.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>entity_attribute_id</strong></td>
+                                        <td>int</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entity_type_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to eav_entity_type.entity_type_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_set_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to eav_attribute_set.attribute_set_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_group_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to eav_attribute_group.attribute_group_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to eav_attribute.attribute_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>sort_order</strong></td>
+                                        <td>smallint</td>
+                                        <td>Display order within the group</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h2>Attribute Option Tables</h2>
+
+                    <div class="table-container">
+                        <h3>eav_attribute_option</h3>
+                        <p class="table-description">
+                            Defines options for dropdown and multiselect attributes.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>option_id</strong></td>
+                                        <td>int</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>attribute_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to eav_attribute.attribute_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>sort_order</strong></td>
+                                        <td>smallint</td>
+                                        <td>Display order</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>eav_attribute_option_value</h3>
+                        <p class="table-description">
+                            Stores the actual option values, potentially in multiple languages.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>value_id</strong></td>
+                                        <td>int</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>option_id</strong></td>
+                                        <td>int</td>
+                                        <td>Foreign key to eav_attribute_option.option_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>store_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Store view ID (0 for global values)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>value</strong></td>
+                                        <td>varchar</td>
+                                        <td>The option value text</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h2>Entity Value Tables</h2>
+
+                    <p>
+                        Each entity type that uses the EAV model has its own set of value tables. For example:
+                    </p>
+
+                    <ul>
+                        <li><strong>catalog_product_entity_*</strong> - For product attributes</li>
+                        <li><strong>customer_entity_*</strong> - For customer attributes</li>
+                        <li><strong>catalog_category_entity_*</strong> - For category attributes</li>
+                    </ul>
+
+                    <p>
+                        Each set includes tables for different data types:
+                    </p>
+
+                    <ul>
+                        <li><strong>*_varchar</strong> - For string values</li>
+                        <li><strong>*_int</strong> - For integer values</li>
+                        <li><strong>*_decimal</strong> - For decimal values</li>
+                        <li><strong>*_text</strong> - For long text values</li>
+                        <li><strong>*_datetime</strong> - For date/time values</li>
+                    </ul>
+
+                    <div class="alert alert-info mt-4">
+                        <h4>Data Analysis Tips</h4>
+                        <p>
+                            Working with EAV data can be challenging. Here are some tips:
+                        </p>
+                        <ul>
+                            <li>To find all attributes for a specific entity type:
+                                <pre><code>SELECT attribute_id, attribute_code, backend_type, frontend_input
+FROM eav_attribute
+WHERE entity_type_id = (
+    SELECT entity_type_id 
+    FROM eav_entity_type 
+    WHERE entity_type_code = 'catalog_product'
+)</code></pre>
+                            </li>
+                            <li>To find all attribute options for a dropdown attribute:
+                                <pre><code>SELECT o.option_id, v.value
+FROM eav_attribute_option o
+JOIN eav_attribute_option_value v ON o.option_id = v.option_id AND v.store_id = 0
+WHERE o.attribute_id = [attribute_id]
+ORDER BY o.sort_order</code></pre>
+                            </li>
+                            <li>To create a "flat" view of an entity with all its attributes, you'll need to join multiple value tables:
+                                <pre><code>SELECT 
+  e.entity_id,
+  e.sku,
+  varchar_table.value AS name,
+  int_table.value AS status,
+  decimal_table.value AS price
+FROM catalog_product_entity e
+LEFT JOIN catalog_product_entity_varchar varchar_table 
+  ON e.entity_id = varchar_table.entity_id 
+  AND varchar_table.attribute_id = [name_attribute_id]
+  AND varchar_table.store_id = 0
+LEFT JOIN catalog_product_entity_int int_table 
+  ON e.entity_id = int_table.entity_id 
+  AND int_table.attribute_id = [status_attribute_id]
+  AND int_table.store_id = 0
+LEFT JOIN catalog_product_entity_decimal decimal_table 
+  ON e.entity_id = decimal_table.entity_id 
+  AND decimal_table.attribute_id = [price_attribute_id]
+  AND decimal_table.store_id = 0</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarClose = document.getElementById('sidebarClose');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('show');
+                sidebarOverlay.classList.toggle('show');
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.remove('show');
+                sidebarOverlay.classList.remove('show');
+            }
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', toggleSidebar);
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', closeSidebar);
+            }
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+            }
+            
+            // Close sidebar when clicking on navigation links on mobile
+            const navLinks = sidebar.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 768) {
+                        closeSidebar();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

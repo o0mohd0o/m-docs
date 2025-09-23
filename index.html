@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magento 2 Database Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+        
+        /* Mobile-first responsive sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: -250px;
+            width: 250px;
+            z-index: 1000;
+            padding: 20px 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            transition: left 0.3s ease;
+            border-right: 1px solid #dee2e6;
+        }
+        
+        .sidebar.show {
+            left: 0;
+        }
+        
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .sidebar-overlay.show {
+            display: block;
+        }
+        
+        .main-content {
+            margin-left: 0;
+            padding: 20px 15px;
+        }
+        
+        /* Mobile hamburger menu */
+        .mobile-menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: #0b5ed7;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Close button in sidebar */
+        .sidebar-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #6c757d;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .nav-link {
+            color: #333;
+        }
+        
+        .nav-link.active {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        
+        .table-container {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        h3 {
+            margin-top: 25px;
+            color: #0d6efd;
+        }
+        
+        .table-description {
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive breakpoints */
+        @media (min-width: 768px) {
+            .sidebar {
+                left: 0;
+                position: fixed;
+            }
+            
+            .main-content {
+                margin-left: 250px;
+                padding: 20px;
+            }
+            
+            .mobile-menu-toggle {
+                display: none;
+            }
+            
+            .sidebar-overlay {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .sidebar-close {
+                display: block;
+            }
+            
+            .main-content {
+                padding-top: 70px;
+            }
+            
+            h1.h2 {
+                font-size: 1.5rem;
+            }
+            
+            .table-responsive {
+                font-size: 0.875rem;
+            }
+            
+            .alert {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 70px 10px 20px;
+            }
+            
+            h1.h2 {
+                font-size: 1.25rem;
+            }
+            
+            .table-responsive {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile menu toggle -->
+    <button class="mobile-menu-toggle d-md-none" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="sidebar">
+                <button class="sidebar-close" id="sidebarClose">&times;</button>
+                <div class="position-sticky pt-3">
+                    <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Modules</span>
+                    </h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sales.html">
+                                Sales & Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalog.html">
+                                Catalog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="customer.html">
+                                Customer
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eav.html">
+                                EAV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inventory.html">
+                                Inventory
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cms.html">
+                                CMS & Content
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Magento 2 Database Documentation</h1>
+                </div>
+
+                <div class="overview">
+                    <h2>Overview</h2>
+                    <p>
+                        This documentation provides a comprehensive guide to the Magento 2 database structure, 
+                        designed to help data analysts understand the relationships between tables and their purposes.
+                        Magento 2 uses a complex database schema with over 300 tables organized into different modules.
+                    </p>
+                    
+                    <h3>Database Architecture</h3>
+                    <p>
+                        Magento 2 uses a modular architecture where each module has its own set of database tables.
+                        The database follows these key design patterns:
+                    </p>
+                    <ul>
+                        <li><strong>EAV (Entity-Attribute-Value)</strong> - A flexible schema that allows for dynamic attributes</li>
+                        <li><strong>Flat Tables</strong> - Denormalized tables for performance optimization</li>
+                        <li><strong>Relational Tables</strong> - Standard normalized database tables</li>
+                    </ul>
+
+                    <h3>Key Database Modules</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Module</th>
+                                    <th>Prefix</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="sales.html">Sales & Orders</a></td>
+                                    <td>sales_*</td>
+                                    <td>Tables related to orders, invoices, shipments, and payments</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="catalog.html">Catalog</a></td>
+                                    <td>catalog_*</td>
+                                    <td>Product, category, and attribute information</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="customer.html">Customer</a></td>
+                                    <td>customer_*</td>
+                                    <td>Customer accounts, addresses, and groups</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="eav.html">EAV</a></td>
+                                    <td>eav_*</td>
+                                    <td>Entity-Attribute-Value core tables</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="inventory.html">Inventory</a></td>
+                                    <td>inventory_*, cataloginventory_*</td>
+                                    <td>Stock management and inventory</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="cms.html">CMS & Content</a></td>
+                                    <td>cms_*</td>
+                                    <td>Content management, pages, and blocks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Database Relationships Overview</h3>
+                    <img src="images/db-overview.svg" alt="Magento 2 Database Overview" style="max-width: 800px;" class="img-fluid mt-3 mb-4">
+                    <p class="text-muted"><em>Note: The image above is a simplified representation. Actual database has many more relationships.</em></p>
+
+                    <h3>Common ID Patterns</h3>
+                    <p>
+                        Understanding these common ID patterns will help you navigate the database:
+                    </p>
+                    <ul>
+                        <li><strong>entity_id</strong> - Primary key in most entity tables</li>
+                        <li><strong>*_id</strong> - Foreign keys referencing other tables</li>
+                        <li><strong>increment_id</strong> - Human-readable IDs (like order numbers)</li>
+                        <li><strong>store_id</strong> - References to specific store views</li>
+                        <li><strong>website_id</strong> - References to specific websites</li>
+                    </ul>
+
+                    <div class="alert alert-info mt-4">
+                        <h4>Getting Started</h4>
+                        <p>
+                            For new data analysts, we recommend starting with the following tables:
+                        </p>
+                        <ul>
+                            <li><code>sales_order</code> and <code>sales_order_item</code> - For order analysis</li>
+                            <li><code>customer_entity</code> - For customer data</li>
+                            <li><code>catalog_product_entity</code> - For product information</li>
+                        </ul>
+                        <p>
+                            Click on the module links in the sidebar to explore detailed table structures.
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarClose = document.getElementById('sidebarClose');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('show');
+                sidebarOverlay.classList.toggle('show');
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.remove('show');
+                sidebarOverlay.classList.remove('show');
+            }
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', toggleSidebar);
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', closeSidebar);
+            }
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+            }
+            
+            // Close sidebar when clicking on navigation links on mobile
+            const navLinks = sidebar.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 768) {
+                        closeSidebar();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

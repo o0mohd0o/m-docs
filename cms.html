@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magento 2 Database - CMS & Content</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+        
+        /* Mobile-first responsive sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: -250px;
+            width: 250px;
+            z-index: 1000;
+            padding: 20px 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            transition: left 0.3s ease;
+            border-right: 1px solid #dee2e6;
+        }
+        
+        .sidebar.show {
+            left: 0;
+        }
+        
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .sidebar-overlay.show {
+            display: block;
+        }
+        
+        .main-content {
+            margin-left: 0;
+            padding: 20px 15px;
+        }
+        
+        /* Mobile hamburger menu */
+        .mobile-menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: #0b5ed7;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Close button in sidebar */
+        .sidebar-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #6c757d;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .nav-link {
+            color: #333;
+        }
+        
+        .nav-link.active {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        
+        .table-container {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        h3 {
+            margin-top: 25px;
+            color: #0d6efd;
+        }
+        
+        .table-description {
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive breakpoints */
+        @media (min-width: 768px) {
+            .sidebar {
+                left: 0;
+                position: fixed;
+            }
+            
+            .main-content {
+                margin-left: 250px;
+                padding: 20px;
+            }
+            
+            .mobile-menu-toggle {
+                display: none;
+            }
+            
+            .sidebar-overlay {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .sidebar-close {
+                display: block;
+            }
+            
+            .main-content {
+                padding-top: 70px;
+            }
+            
+            h1.h2 {
+                font-size: 1.5rem;
+            }
+            
+            .table-responsive {
+                font-size: 0.875rem;
+            }
+            
+            .alert {
+                font-size: 0.9rem;
+            }
+            
+            pre {
+                font-size: 0.75rem;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 70px 10px 20px;
+            }
+            
+            h1.h2 {
+                font-size: 1.25rem;
+            }
+            
+            .table-responsive {
+                font-size: 0.8rem;
+            }
+            
+            pre {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile menu toggle -->
+    <button class="mobile-menu-toggle d-md-none" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="sidebar">
+                <button class="sidebar-close" id="sidebarClose">&times;</button>
+                <div class="position-sticky pt-3">
+                    <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Modules</span>
+                    </h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sales.html">
+                                Sales & Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalog.html">
+                                Catalog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="customer.html">
+                                Customer
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eav.html">
+                                EAV
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inventory.html">
+                                Inventory
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="cms.html">
+                                CMS & Content
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">CMS & Content Database Structure</h1>
+                </div>
+
+                <div class="overview">
+                    <p>
+                        The CMS (Content Management System) module in Magento 2 manages static content such as pages, 
+                        blocks, and widgets. This module allows store administrators to create and manage content 
+                        without requiring technical knowledge.
+                    </p>
+                    
+                    <h3>Key Relationships</h3>
+                    <img src="images/cms-relationships.svg" alt="CMS Tables Relationships" style="max-width: 800px;" class="img-fluid mt-3 mb-4">
+                    <p class="text-muted"><em>Note: This is a simplified diagram showing the main relationships.</em></p>
+
+                    <h2>CMS Page Tables</h2>
+
+                    <div class="table-container">
+                        <h3>cms_page</h3>
+                        <p class="table-description">
+                            Stores CMS pages such as the homepage, about us, terms and conditions, etc.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>page_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>title</strong></td>
+                                        <td>varchar</td>
+                                        <td>Page title</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>page_layout</strong></td>
+                                        <td>varchar</td>
+                                        <td>Page layout (e.g., 1column, 2columns-left)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>meta_keywords</strong></td>
+                                        <td>text</td>
+                                        <td>Meta keywords for SEO</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>meta_description</strong></td>
+                                        <td>text</td>
+                                        <td>Meta description for SEO</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>identifier</strong></td>
+                                        <td>varchar</td>
+                                        <td>URL key (e.g., 'about-us')</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>content_heading</strong></td>
+                                        <td>varchar</td>
+                                        <td>Content heading</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>content</strong></td>
+                                        <td>mediumtext</td>
+                                        <td>Page content (HTML)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>creation_time</strong></td>
+                                        <td>timestamp</td>
+                                        <td>When the page was created</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>update_time</strong></td>
+                                        <td>timestamp</td>
+                                        <td>When the page was last updated</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>is_active</strong></td>
+                                        <td>smallint</td>
+                                        <td>Whether the page is active</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>sort_order</strong></td>
+                                        <td>smallint</td>
+                                        <td>Sort order</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>layout_update_xml</strong></td>
+                                        <td>text</td>
+                                        <td>Custom layout update XML</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>custom_theme</strong></td>
+                                        <td>varchar</td>
+                                        <td>Custom theme</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>custom_root_template</strong></td>
+                                        <td>varchar</td>
+                                        <td>Custom root template</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>cms_page_store</h3>
+                        <p class="table-description">
+                            Maps CMS pages to store views (many-to-many relationship).
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>page_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to cms_page.page_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>store_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Store view ID (0 for all stores)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h2>CMS Block Tables</h2>
+
+                    <div class="table-container">
+                        <h3>cms_block</h3>
+                        <p class="table-description">
+                            Stores CMS blocks, which are reusable content fragments that can be placed in various locations.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>block_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>title</strong></td>
+                                        <td>varchar</td>
+                                        <td>Block title</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>identifier</strong></td>
+                                        <td>varchar</td>
+                                        <td>Block identifier (used in layout XML)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>content</strong></td>
+                                        <td>mediumtext</td>
+                                        <td>Block content (HTML)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>creation_time</strong></td>
+                                        <td>timestamp</td>
+                                        <td>When the block was created</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>update_time</strong></td>
+                                        <td>timestamp</td>
+                                        <td>When the block was last updated</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>is_active</strong></td>
+                                        <td>smallint</td>
+                                        <td>Whether the block is active</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>cms_block_store</h3>
+                        <p class="table-description">
+                            Maps CMS blocks to store views (many-to-many relationship).
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>block_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Foreign key to cms_block.block_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>store_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Store view ID (0 for all stores)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h2>Widget Tables</h2>
+
+                    <div class="table-container">
+                        <h3>widget_instance</h3>
+                        <p class="table-description">
+                            Stores widget instances, which are dynamic content elements that can be placed in various locations.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>instance_id</strong></td>
+                                        <td>int</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>instance_type</strong></td>
+                                        <td>varchar</td>
+                                        <td>Widget type (PHP class)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>theme_id</strong></td>
+                                        <td>int</td>
+                                        <td>Theme ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>title</strong></td>
+                                        <td>varchar</td>
+                                        <td>Widget title</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>store_ids</strong></td>
+                                        <td>varchar</td>
+                                        <td>Comma-separated list of store IDs</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>widget_parameters</strong></td>
+                                        <td>text</td>
+                                        <td>Widget parameters (serialized)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>sort_order</strong></td>
+                                        <td>smallint</td>
+                                        <td>Sort order</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>widget_instance_page</h3>
+                        <p class="table-description">
+                            Defines which pages a widget appears on.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>page_id</strong></td>
+                                        <td>int</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>instance_id</strong></td>
+                                        <td>int</td>
+                                        <td>Foreign key to widget_instance.instance_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>page_group</strong></td>
+                                        <td>varchar</td>
+                                        <td>Page group (e.g., 'all_pages', 'specific_pages')</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>layout_handle</strong></td>
+                                        <td>varchar</td>
+                                        <td>Layout handle</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>block_reference</strong></td>
+                                        <td>varchar</td>
+                                        <td>Block reference (container)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>page_for</strong></td>
+                                        <td>varchar</td>
+                                        <td>Page type</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entities</strong></td>
+                                        <td>text</td>
+                                        <td>Specific entities (e.g., page IDs)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>page_template</strong></td>
+                                        <td>varchar</td>
+                                        <td>Page template</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>widget_instance_page_layout</h3>
+                        <p class="table-description">
+                            Maps widget instances to page layouts.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>page_id</strong></td>
+                                        <td>int</td>
+                                        <td>Foreign key to widget_instance_page.page_id</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>layout_update_id</strong></td>
+                                        <td>int</td>
+                                        <td>Layout update ID</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h2>URL Rewrite Tables</h2>
+
+                    <div class="table-container">
+                        <h3>url_rewrite</h3>
+                        <p class="table-description">
+                            Stores URL rewrites for products, categories, CMS pages, and custom URLs.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>url_rewrite_id</strong></td>
+                                        <td>int</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entity_type</strong></td>
+                                        <td>varchar</td>
+                                        <td>Entity type (product, category, cms-page, custom)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>entity_id</strong></td>
+                                        <td>int</td>
+                                        <td>Entity ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>request_path</strong></td>
+                                        <td>varchar</td>
+                                        <td>Request path (URL key)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>target_path</strong></td>
+                                        <td>varchar</td>
+                                        <td>Target path (internal path)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>redirect_type</strong></td>
+                                        <td>smallint</td>
+                                        <td>Redirect type (0=no redirect, 301=permanent, 302=temporary)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>store_id</strong></td>
+                                        <td>smallint</td>
+                                        <td>Store view ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>description</strong></td>
+                                        <td>varchar</td>
+                                        <td>Description</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>is_autogenerated</strong></td>
+                                        <td>smallint</td>
+                                        <td>Whether the rewrite was automatically generated</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>metadata</strong></td>
+                                        <td>varchar</td>
+                                        <td>Additional metadata (JSON)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h2>Design Tables</h2>
+
+                    <div class="table-container">
+                        <h3>design_config_grid_flat</h3>
+                        <p class="table-description">
+                            Stores design configuration for different store views.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>entity_id</strong></td>
+                                        <td>int</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>store_website_id</strong></td>
+                                        <td>int</td>
+                                        <td>Website ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>store_group_id</strong></td>
+                                        <td>int</td>
+                                        <td>Store group ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>store_id</strong></td>
+                                        <td>int</td>
+                                        <td>Store view ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>theme_theme_id</strong></td>
+                                        <td>varchar</td>
+                                        <td>Theme ID</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3>theme</h3>
+                        <p class="table-description">
+                            Stores theme information.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>theme_id</strong></td>
+                                        <td>int</td>
+                                        <td>Primary key</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>parent_id</strong></td>
+                                        <td>int</td>
+                                        <td>Parent theme ID</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>theme_path</strong></td>
+                                        <td>varchar</td>
+                                        <td>Theme path</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>theme_title</strong></td>
+                                        <td>varchar</td>
+                                        <td>Theme title</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>preview_image</strong></td>
+                                        <td>varchar</td>
+                                        <td>Preview image path</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>is_featured</strong></td>
+                                        <td>tinyint</td>
+                                        <td>Whether the theme is featured</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>area</strong></td>
+                                        <td>varchar</td>
+                                        <td>Area (frontend, adminhtml)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>type</strong></td>
+                                        <td>smallint</td>
+                                        <td>Theme type</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>code</strong></td>
+                                        <td>text</td>
+                                        <td>Theme code</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info mt-4">
+                        <h4>Data Analysis Tips</h4>
+                        <p>
+                            When analyzing content data:
+                        </p>
+                        <ul>
+                            <li>To get all active CMS pages:
+                                <pre><code>SELECT p.page_id, p.title, p.identifier, p.content, ps.store_id
+FROM cms_page p
+JOIN cms_page_store ps ON p.page_id = ps.page_id
+WHERE p.is_active = 1</code></pre>
+                            </li>
+                            <li>To get all active CMS blocks:
+                                <pre><code>SELECT b.block_id, b.title, b.identifier, b.content, bs.store_id
+FROM cms_block b
+JOIN cms_block_store bs ON b.block_id = bs.block_id
+WHERE b.is_active = 1</code></pre>
+                            </li>
+                            <li>To get URL rewrites for a specific product:
+                                <pre><code>SELECT request_path, target_path, redirect_type, store_id
+FROM url_rewrite
+WHERE entity_type = 'product' AND entity_id = [product_id]</code></pre>
+                            </li>
+                            <li>To find widgets used on a specific page:
+                                <pre><code>SELECT wi.instance_id, wi.instance_type, wi.title, wip.block_reference
+FROM widget_instance wi
+JOIN widget_instance_page wip ON wi.instance_id = wip.instance_id
+WHERE wip.layout_handle = 'cms_page_view' AND wip.entities LIKE '%[page_id]%'</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarClose = document.getElementById('sidebarClose');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('show');
+                sidebarOverlay.classList.toggle('show');
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.remove('show');
+                sidebarOverlay.classList.remove('show');
+            }
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', toggleSidebar);
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', closeSidebar);
+            }
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+            }
+            
+            // Close sidebar when clicking on navigation links on mobile
+            const navLinks = sidebar.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 768) {
+                        closeSidebar();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
