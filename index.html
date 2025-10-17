@@ -3,385 +3,710 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magento 2 Database Documentation</title>
+    <title>M-Docs - Magento 2 Documentation Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #6c757d;
+            --success: #198754;
+            --info: #0dcaf0;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            padding-top: 20px;
-            padding-bottom: 40px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 0;
         }
-        
-        /* Mobile-first responsive sidebar */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: -250px;
-            width: 250px;
-            z-index: 1000;
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
             padding: 20px 0;
-            overflow-x: hidden;
-            overflow-y: auto;
-            background-color: #f8f9fa;
-            transition: left 0.3s ease;
-            border-right: 1px solid #dee2e6;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        
-        .sidebar.show {
-            left: 0;
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .sidebar-overlay {
-            position: fixed;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--info));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: #333;
+        }
+
+        .logo-text p {
+            font-size: 0.875rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.1);
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 30px 80px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-left: 65px;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .doc-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doc-card::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
+            height: 4px;
+            background: linear-gradient(90deg, var(--card-color), var(--card-color-light));
         }
-        
-        .sidebar-overlay.show {
-            display: block;
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
-        
-        .main-content {
-            margin-left: 0;
-            padding: 20px 15px;
-        }
-        
-        /* Mobile hamburger menu */
-        .mobile-menu-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1001;
-            background: #0d6efd;
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
             color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 8px 12px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--card-color), var(--card-color-light));
         }
-        
-        .mobile-menu-toggle:hover {
-            background: #0b5ed7;
-        }
-        
-        .mobile-menu-toggle span {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: white;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        
-        /* Close button in sidebar */
-        .sidebar-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: #6c757d;
-            cursor: pointer;
-            display: none;
-        }
-        
-        .nav-link {
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
             color: #333;
+            margin-bottom: 12px;
         }
-        
-        .nav-link.active {
-            font-weight: bold;
-            color: #0d6efd;
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
-        
-        .table-container {
-            margin-bottom: 30px;
+
+        .card-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.875rem;
+            color: #999;
         }
-        
-        h2 {
-            margin-top: 30px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #dee2e6;
+
+        .card-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
-        
-        h3 {
-            margin-top: 25px;
-            color: #0d6efd;
+
+        .card-arrow {
+            margin-left: auto;
+            font-size: 20px;
+            color: var(--card-color);
         }
-        
-        .table-description {
+
+        /* Color Variants */
+        .doc-card.sales {
+            --card-color: #0d6efd;
+            --card-color-light: #6ea8fe;
+        }
+
+        .doc-card.catalog {
+            --card-color: #198754;
+            --card-color-light: #75b798;
+        }
+
+        .doc-card.customer {
+            --card-color: #0dcaf0;
+            --card-color-light: #6edff6;
+        }
+
+        .doc-card.eav {
+            --card-color: #6f42c1;
+            --card-color-light: #a98eda;
+        }
+
+        .doc-card.inventory {
+            --card-color: #fd7e14;
+            --card-color-light: #feb272;
+        }
+
+        .doc-card.cms {
+            --card-color: #d63384;
+            --card-color-light: #e685b5;
+        }
+
+        .doc-card.cert {
+            --card-color: #ffc107;
+            --card-color-light: #ffda6a;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 25px;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
             margin-bottom: 15px;
+            opacity: 0.9;
         }
-        
-        /* Responsive breakpoints */
-        @media (min-width: 768px) {
-            .sidebar {
-                left: 0;
-                position: fixed;
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
             }
-            
-            .main-content {
-                margin-left: 250px;
-                padding: 20px;
+
+            .hero p {
+                font-size: 1rem;
             }
-            
-            .mobile-menu-toggle {
+
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
                 display: none;
             }
-            
-            .sidebar-overlay {
-                display: none !important;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .sidebar-close {
-                display: block;
-            }
-            
-            .main-content {
-                padding-top: 70px;
-            }
-            
-            h1.h2 {
+
+            .section-title {
                 font-size: 1.5rem;
             }
-            
-            .table-responsive {
-                font-size: 0.875rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            
-            .alert {
-                font-size: 0.9rem;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        
-        @media (max-width: 480px) {
-            .main-content {
-                padding: 70px 10px 20px;
-            }
-            
-            h1.h2 {
-                font-size: 1.25rem;
-            }
-            
-            .table-responsive {
-                font-size: 0.8rem;
-            }
+
+        .doc-card {
+            animation: fadeInUp 0.6s ease-out;
         }
+
+        .doc-card:nth-child(1) { animation-delay: 0.1s; }
+        .doc-card:nth-child(2) { animation-delay: 0.2s; }
+        .doc-card:nth-child(3) { animation-delay: 0.3s; }
+        .doc-card:nth-child(4) { animation-delay: 0.4s; }
+        .doc-card:nth-child(5) { animation-delay: 0.5s; }
+        .doc-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <!-- Mobile menu toggle -->
-    <button class="mobile-menu-toggle d-md-none" id="mobileMenuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    
-    <!-- Sidebar overlay for mobile -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <nav id="sidebar" class="sidebar">
-                <button class="sidebar-close" id="sidebarClose">&times;</button>
-                <div class="position-sticky pt-3">
-                    <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Modules</span>
-                    </h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">
-                                Overview
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sales.html">
-                                Sales & Orders
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="catalog.html">
-                                Catalog
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="customer.html">
-                                Customer
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="eav.html">
-                                EAV
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="inventory.html">
-                                Inventory
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="cms.html">
-                                CMS & Content
-                            </a>
-                        </li>
-                    </ul>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index-new.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-database"></i>
                 </div>
-            </nav>
-
-            <!-- Main content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Magento 2 Database Documentation</h1>
+                <div class="logo-text">
+                    <h1>M-Docs</h1>
+                    <p>Magento Documentation Hub</p>
                 </div>
+            </a>
 
-                <div class="overview">
-                    <h2>Overview</h2>
-                    <p>
-                        This documentation provides a comprehensive guide to the Magento 2 database structure, 
-                        designed to help data analysts understand the relationships between tables and their purposes.
-                        Magento 2 uses a complex database schema with over 300 tables organized into different modules.
-                    </p>
-                    
-                    <h3>Database Architecture</h3>
-                    <p>
-                        Magento 2 uses a modular architecture where each module has its own set of database tables.
-                        The database follows these key design patterns:
-                    </p>
-                    <ul>
-                        <li><strong>EAV (Entity-Attribute-Value)</strong> - A flexible schema that allows for dynamic attributes</li>
-                        <li><strong>Flat Tables</strong> - Denormalized tables for performance optimization</li>
-                        <li><strong>Relational Tables</strong> - Standard normalized database tables</li>
-                    </ul>
-
-                    <h3>Key Database Modules</h3>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm">
-                            <thead>
-                                <tr>
-                                    <th>Module</th>
-                                    <th>Prefix</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="sales.html">Sales & Orders</a></td>
-                                    <td>sales_*</td>
-                                    <td>Tables related to orders, invoices, shipments, and payments</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="catalog.html">Catalog</a></td>
-                                    <td>catalog_*</td>
-                                    <td>Product, category, and attribute information</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="customer.html">Customer</a></td>
-                                    <td>customer_*</td>
-                                    <td>Customer accounts, addresses, and groups</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="eav.html">EAV</a></td>
-                                    <td>eav_*</td>
-                                    <td>Entity-Attribute-Value core tables</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="inventory.html">Inventory</a></td>
-                                    <td>inventory_*, cataloginventory_*</td>
-                                    <td>Stock management and inventory</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="cms.html">CMS & Content</a></td>
-                                    <td>cms_*</td>
-                                    <td>Content management, pages, and blocks</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3>Database Relationships Overview</h3>
-                    <img src="images/db-overview.svg" alt="Magento 2 Database Overview" style="max-width: 800px;" class="img-fluid mt-3 mb-4">
-                    <p class="text-muted"><em>Note: The image above is a simplified representation. Actual database has many more relationships.</em></p>
-
-                    <h3>Common ID Patterns</h3>
-                    <p>
-                        Understanding these common ID patterns will help you navigate the database:
-                    </p>
-                    <ul>
-                        <li><strong>entity_id</strong> - Primary key in most entity tables</li>
-                        <li><strong>*_id</strong> - Foreign keys referencing other tables</li>
-                        <li><strong>increment_id</strong> - Human-readable IDs (like order numbers)</li>
-                        <li><strong>store_id</strong> - References to specific store views</li>
-                        <li><strong>website_id</strong> - References to specific websites</li>
-                    </ul>
-
-                    <div class="alert alert-info mt-4">
-                        <h4>Getting Started</h4>
-                        <p>
-                            For new data analysts, we recommend starting with the following tables:
-                        </p>
-                        <ul>
-                            <li><code>sales_order</code> and <code>sales_order_item</code> - For order analysis</li>
-                            <li><code>customer_entity</code> - For customer data</li>
-                            <li><code>catalog_product_entity</code> - For product information</li>
-                        </ul>
-                        <p>
-                            Click on the module links in the sidebar to explore detailed table structures.
-                        </p>
-                    </div>
-                </div>
-            </main>
+            <div class="search-box">
+                <input type="text" placeholder="Search documentation..." id="searchInput">
+                <i class="fas fa-search"></i>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Magento 2 Documentation</h2>
+        <p>Comprehensive database structure guide and certification resources for developers and data analysts</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">300+</span>
+                <span class="stat-label">Database Tables</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">7</span>
+                <span class="stat-label">Core Modules</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Free & Open</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Database Documentation Section -->
+        <div class="section-header">
+            <h3 class="section-title">
+                <i class="fas fa-database"></i>
+                Database Documentation
+            </h3>
+            <p class="section-description">
+                Explore detailed documentation for each Magento 2 database module
+            </p>
+        </div>
+
+        <div class="card-grid">
+            <!-- Database Overview Card -->
+            <a href="database-overview.html" class="doc-card" style="--card-color: #6f42c1; --card-color-light: #a98eda; grid-column: 1 / -1;">
+                <div class="card-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h4 class="card-title">Database Overview & Architecture</h4>
+                <p class="card-description">
+                    Learn about Magento 2 database architecture, EAV system, naming conventions, and common ID patterns. Essential reading before diving into specific modules.
+                </p>
+                <div class="card-meta">
+                    <span class="card-meta-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        Educational Guide
+                    </span>
+                    <span class="card-meta-item">
+                        <i class="fas fa-search"></i>
+                        Searchable
+                    </span>
+                    <i class="fas fa-arrow-right card-arrow"></i>
+                </div>
+            </a>
+
+            <!-- Sales & Orders Card -->
+            <a href="sales.html" class="doc-card sales">
+                <div class="card-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h4 class="card-title">Sales & Orders</h4>
+                <p class="card-description">
+                    Complete documentation of sales-related tables including orders, invoices, shipments, credit memos, and payment information.
+                </p>
+                <div class="card-meta">
+                    <span class="card-meta-item">
+                        <i class="fas fa-table"></i>
+                        45+ Tables
+                    </span>
+                    <span class="card-meta-item">
+                        <i class="fas fa-tag"></i>
+                        sales_*
+                    </span>
+                    <i class="fas fa-arrow-right card-arrow"></i>
+                </div>
+            </a>
+
+            <!-- Catalog Card -->
+            <a href="catalog.html" class="doc-card catalog">
+                <div class="card-icon">
+                    <i class="fas fa-box"></i>
+                </div>
+                <h4 class="card-title">Catalog</h4>
+                <p class="card-description">
+                    Product and category management tables, including attributes, pricing, media, and relationship structures.
+                </p>
+                <div class="card-meta">
+                    <span class="card-meta-item">
+                        <i class="fas fa-table"></i>
+                        60+ Tables
+                    </span>
+                    <span class="card-meta-item">
+                        <i class="fas fa-tag"></i>
+                        catalog_*
+                    </span>
+                    <i class="fas fa-arrow-right card-arrow"></i>
+                </div>
+            </a>
+
+            <!-- Customer Card -->
+            <a href="customer.html" class="doc-card customer">
+                <div class="card-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h4 class="card-title">Customer</h4>
+                <p class="card-description">
+                    Customer account data, addresses, groups, and authentication information with detailed table relationships.
+                </p>
+                <div class="card-meta">
+                    <span class="card-meta-item">
+                        <i class="fas fa-table"></i>
+                        25+ Tables
+                    </span>
+                    <span class="card-meta-item">
+                        <i class="fas fa-tag"></i>
+                        customer_*
+                    </span>
+                    <i class="fas fa-arrow-right card-arrow"></i>
+                </div>
+            </a>
+
+            <!-- EAV Card -->
+            <a href="eav.html" class="doc-card eav">
+                <div class="card-icon">
+                    <i class="fas fa-link"></i>
+                </div>
+                <h4 class="card-title">EAV System</h4>
+                <p class="card-description">
+                    Entity-Attribute-Value architecture that powers Magento's flexible attribute system across multiple entities.
+                </p>
+                <div class="card-meta">
+                    <span class="card-meta-item">
+                        <i class="fas fa-table"></i>
+                        30+ Tables
+                    </span>
+                    <span class="card-meta-item">
+                        <i class="fas fa-tag"></i>
+                        eav_*
+                    </span>
+                    <i class="fas fa-arrow-right card-arrow"></i>
+                </div>
+            </a>
+
+            <!-- Inventory Card -->
+            <a href="inventory.html" class="doc-card inventory">
+                <div class="card-icon">
+                    <i class="fas fa-warehouse"></i>
+                </div>
+                <h4 class="card-title">Inventory</h4>
+                <p class="card-description">
+                    Multi-source inventory management, stock status, reservations, and the new MSI (Multi-Source Inventory) system.
+                </p>
+                <div class="card-meta">
+                    <span class="card-meta-item">
+                        <i class="fas fa-table"></i>
+                        35+ Tables
+                    </span>
+                    <span class="card-meta-item">
+                        <i class="fas fa-tag"></i>
+                        inventory_*
+                    </span>
+                    <i class="fas fa-arrow-right card-arrow"></i>
+                </div>
+            </a>
+
+            <!-- CMS Card -->
+            <a href="cms.html" class="doc-card cms">
+                <div class="card-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h4 class="card-title">CMS & Content</h4>
+                <p class="card-description">
+                    Content management system tables for pages, blocks, widgets, and media gallery with store view support.
+                </p>
+                <div class="card-meta">
+                    <span class="card-meta-item">
+                        <i class="fas fa-table"></i>
+                        20+ Tables
+                    </span>
+                    <span class="card-meta-item">
+                        <i class="fas fa-tag"></i>
+                        cms_*
+                    </span>
+                    <i class="fas fa-arrow-right card-arrow"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Certification Section -->
+        <div class="section-header">
+            <h3 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Adobe Certification
+            </h3>
+            <p class="section-description">
+                Prepare for Adobe Commerce Developer Professional (AD0-E717) certification
+            </p>
+        </div>
+
+        <div class="card-grid">
+            <a href="cert-overview.html" class="doc-card cert">
+                <div class="card-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h4 class="card-title">AD0-E717 Study Guide</h4>
+                <p class="card-description">
+                    Complete certification preparation guide with exam overview, topics breakdown, study path, and practice resources.
+                </p>
+                <div class="card-meta">
+                    <span class="card-meta-item">
+                        <i class="fas fa-clock"></i>
+                        4-6 Weeks
+                    </span>
+                    <span class="card-meta-item">
+                        <i class="fas fa-book"></i>
+                        6 Modules
+                    </span>
+                    <i class="fas fa-arrow-right card-arrow"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Features -->
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h5 class="feature-title">Search Functionality</h5>
+                <p class="feature-text">
+                    Quickly find tables, columns, and relationships across the entire database structure
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h5 class="feature-title">Relationship Diagrams</h5>
+                <p class="feature-text">
+                    Visual ER diagrams showing table relationships and foreign key constraints
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h5 class="feature-title">Mobile Responsive</h5>
+                <p class="feature-text">
+                    Access documentation on any device with our fully responsive design
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h5 class="feature-title">Always Updated</h5>
+                <p class="feature-text">
+                    Documentation stays current with the latest Magento 2 releases
+                </p>
+            </div>
+        </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-            const sidebarClose = document.getElementById('sidebarClose');
+        // Simple search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            if (query.length < 2) return;
             
-            function toggleSidebar() {
-                sidebar.classList.toggle('show');
-                sidebarOverlay.classList.toggle('show');
-            }
-            
-            function closeSidebar() {
-                sidebar.classList.remove('show');
-                sidebarOverlay.classList.remove('show');
-            }
-            
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', toggleSidebar);
-            }
-            
-            if (sidebarOverlay) {
-                sidebarOverlay.addEventListener('click', closeSidebar);
-            }
-            
-            if (sidebarClose) {
-                sidebarClose.addEventListener('click', closeSidebar);
-            }
-            
-            // Close sidebar when clicking on navigation links on mobile
-            const navLinks = sidebar.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768) {
-                        closeSidebar();
-                    }
-                });
+            // Simple client-side search - could be enhanced
+            console.log('Searching for:', query);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
     </script>

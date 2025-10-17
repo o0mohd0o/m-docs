@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Commerce - Customization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/common.css" rel="stylesheet">
+    <style>
+        body { padding-top: 20px; padding-bottom: 40px; }
+        .sidebar { position: fixed; top: 0; bottom: 0; left: -250px; width: 250px; z-index: 1000; padding: 20px 0; overflow-x: hidden; overflow-y: auto; background-color: #f8f9fa; transition: left 0.3s ease; border-right: 1px solid #dee2e6; }
+        .sidebar.show { left: 0; }
+        .sidebar-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999; display: none; }
+        .sidebar-overlay.show { display: block; }
+        .main-content { margin-left: 0; padding: 20px 15px; }
+        .mobile-menu-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: #0d6efd; color: white; border: none; border-radius: 4px; padding: 8px 12px; cursor: pointer; }
+        .mobile-menu-toggle:hover { background: #0b5ed7; }
+        .mobile-menu-toggle span { display: block; width: 20px; height: 2px; background: white; margin: 3px 0; }
+        .sidebar-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; color: #6c757d; cursor: pointer; display: none; }
+        .nav-link { color: #333; }
+        .nav-link.active { font-weight: bold; color: #0d6efd; }
+        h2 { margin-top: 30px; padding-bottom: 10px; border-bottom: 1px solid #dee2e6; }
+        h3 { margin-top: 25px; color: #0d6efd; }
+        @media (min-width: 768px) { .sidebar { left: 0; } .main-content { margin-left: 250px; padding: 20px; } .mobile-menu-toggle { display: none; } .sidebar-overlay { display: none !important; } }
+        @media (max-width: 767px) { .sidebar-close { display: block; } .main-content { padding-top: 70px; } }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 4px; border: 1px solid #dee2e6; }
+    </style>
+</head>
+<body>
+    <button class="mobile-menu-toggle d-md-none" id="mobileMenuToggle"><span></span><span></span><span></span></button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar Navigation (Loaded Dynamically) -->
+            <div id="nav-placeholder"></div>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <div id="searchContainer" class="search-container">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search customization..." autocomplete="off">
+                        <button id="clearSearch" class="search-clear">&times;</button>
+                    </div>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Customization Techniques</h1>
+                </div>
+
+                <div class="overview">
+                    <h2>Plugins (Interceptors)</h2>
+                    
+                    <h3>Plugin Types</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr><th>Type</th><th>Method Prefix</th><th>When Executed</th><th>Can Modify Result</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Before</strong></td><td><code>before</code></td><td>Before the original method</td><td>No (can modify arguments)</td></tr>
+                                <tr><td><strong>Around</strong></td><td><code>around</code></td><td>Wraps the original method</td><td>Yes</td></tr>
+                                <tr><td><strong>After</strong></td><td><code>after</code></td><td>After the original method</td><td>Yes</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Before Plugin Example</h3>
+                    <pre><code>&lt;?php
+namespace Vendor\Module\Plugin;
+
+class ProductPlugin
+{
+    public function beforeSetName(
+        \Magento\Catalog\Model\Product $subject,
+        $name
+    ) {
+        // Modify the name argument before it's set
+        $name = strtoupper($name);
+        return [$name];
+    }
+}</code></pre>
+
+                    <h3>After Plugin Example</h3>
+                    <pre><code>&lt;?php
+namespace Vendor\Module\Plugin;
+
+class ProductPlugin
+{
+    public function afterGetName(
+        \Magento\Catalog\Model\Product $subject,
+        $result
+    ) {
+        // Modify the return value
+        return $result . ' - Modified';
+    }
+}</code></pre>
+
+                    <h3>Around Plugin Example</h3>
+                    <pre><code>&lt;?php
+namespace Vendor\Module\Plugin;
+
+class ProductPlugin
+{
+    public function aroundGetName(
+        \Magento\Catalog\Model\Product $subject,
+        \Closure $proceed
+    ) {
+        // Code before original method
+        $result = $proceed(); // Call original method
+        // Code after original method
+        return 'Prefix ' . $result . ' Suffix';
+    }
+}</code></pre>
+
+                    <h3>Plugin Configuration (di.xml)</h3>
+                    <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+    &lt;type name="Magento\Catalog\Model\Product"&gt;
+        &lt;plugin name="vendor_module_product_plugin" 
+                type="Vendor\Module\Plugin\ProductPlugin" 
+                sortOrder="10" 
+                disabled="false"/&gt;
+    &lt;/type&gt;
+&lt;/config&gt;</code></pre>
+
+                    <h2>Observers</h2>
+                    
+                    <h3>Observer Class</h3>
+                    <pre><code>&lt;?php
+namespace Vendor\Module\Observer;
+
+use Magento\Framework\Event\Observer;
+use Magento\Framework\Event\ObserverInterface;
+
+class ProductSaveObserver implements ObserverInterface
+{
+    public function execute(Observer $observer)
+    {
+        $product = $observer->getEvent()->getProduct();
+        // Custom logic here
+    }
+}</code></pre>
+
+                    <h3>Event Configuration (events.xml)</h3>
+                    <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+    &lt;event name="catalog_product_save_after"&gt;
+        &lt;observer name="vendor_module_product_save" 
+                  instance="Vendor\Module\Observer\ProductSaveObserver"/&gt;
+    &lt;/event&gt;
+&lt;/config&gt;</code></pre>
+
+                    <h3>Dispatching Custom Events</h3>
+                    <pre><code>&lt;?php
+// In your class constructor
+public function __construct(
+    \Magento\Framework\Event\ManagerInterface $eventManager
+) {
+    $this->eventManager = $eventManager;
+}
+
+// Dispatch event
+$this->eventManager->dispatch('custom_event_name', [
+    'product' => $product,
+    'custom_data' => $data
+]);</code></pre>
+
+                    <h2>Preferences</h2>
+                    
+                    <h3>Class Preference</h3>
+                    <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+    &lt;!-- Override entire class --&gt;
+    &lt;preference for="Magento\Catalog\Model\Product" 
+                type="Vendor\Module\Model\CustomProduct"/&gt;
+    
+    &lt;!-- Interface to implementation --&gt;
+    &lt;preference for="Magento\Catalog\Api\ProductRepositoryInterface" 
+                type="Vendor\Module\Model\CustomProductRepository"/&gt;
+&lt;/config&gt;</code></pre>
+
+                    <div class="alert alert-warning">
+                        <strong>⚠️ Warning:</strong> Preferences should be avoided when possible. Use plugins instead to prevent conflicts.
+                    </div>
+
+                    <h2>System Configuration</h2>
+                    
+                    <h3>system.xml</h3>
+                    <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+    &lt;system&gt;
+        &lt;tab id="vendor_module" translate="label" sortOrder="100"&gt;
+            &lt;label&gt;Vendor Module&lt;/label&gt;
+        &lt;/tab&gt;
+        
+        &lt;section id="vendor_module_settings" translate="label" sortOrder="10" 
+                 showInDefault="1" showInWebsite="1" showInStore="1"&gt;
+            &lt;label&gt;Settings&lt;/label&gt;
+            &lt;tab&gt;vendor_module&lt;/tab&gt;
+            &lt;resource&gt;Vendor_Module::config&lt;/resource&gt;
+            
+            &lt;group id="general" translate="label" sortOrder="10" 
+                   showInDefault="1" showInWebsite="1" showInStore="1"&gt;
+                &lt;label&gt;General Settings&lt;/label&gt;
+                
+                &lt;field id="enabled" translate="label" type="select" sortOrder="10" 
+                       showInDefault="1" showInWebsite="1" showInStore="1"&gt;
+                    &lt;label&gt;Enable Module&lt;/label&gt;
+                    &lt;source_model&gt;Magento\Config\Model\Config\Source\Yesno&lt;/source_model&gt;
+                &lt;/field&gt;
+            &lt;/group&gt;
+        &lt;/section&gt;
+    &lt;/system&gt;
+&lt;/config&gt;</code></pre>
+
+                    <h3>Retrieving Config Values</h3>
+                    <pre><code>&lt;?php
+use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Store\Model\ScopeInterface;
+
+public function __construct(
+    ScopeConfigInterface $scopeConfig
+) {
+    $this->scopeConfig = $scopeConfig;
+}
+
+public function getConfigValue()
+{
+    return $this->scopeConfig->getValue(
+        'vendor_module_settings/general/enabled',
+        ScopeInterface::SCOPE_STORE
+    );
+}</code></pre>
+
+                    <h2>CLI Commands</h2>
+                    
+                    <h3>Command Class</h3>
+                    <pre><code>&lt;?php
+namespace Vendor\Module\Console\Command;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputArgument;
+
+class CustomCommand extends Command
+{
+    const NAME_ARGUMENT = 'name';
+
+    protected function configure()
+    {
+        $this->setName('vendor:custom:command')
+             ->setDescription('Custom command description')
+             ->addArgument(
+                 self::NAME_ARGUMENT,
+                 InputArgument::REQUIRED,
+                 'Name argument'
+             );
+        
+        parent::configure();
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $name = $input->getArgument(self::NAME_ARGUMENT);
+        $output->writeln("Hello, $name!");
+        return 0;
+    }
+}</code></pre>
+
+                    <h3>di.xml Registration</h3>
+                    <pre><code>&lt;type name="Magento\Framework\Console\CommandList"&gt;
+    &lt;arguments&gt;
+        &lt;argument name="commands" xsi:type="array"&gt;
+            &lt;item name="vendorCustomCommand" xsi:type="object"&gt;
+                Vendor\Module\Console\Command\CustomCommand
+            &lt;/item&gt;
+        &lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/type&gt;</code></pre>
+
+                    <div class="alert alert-info mt-4">
+                        <h4>🎯 Key Points for Exam</h4>
+                        <ul>
+                            <li>Know when to use plugins vs observers vs preferences</li>
+                            <li>Understand plugin execution order and priorities</li>
+                            <li>Remember that around plugins can prevent method execution</li>
+                            <li>Observers can't modify return values, only side effects</li>
+                            <li>Preferences should be last resort - they can cause conflicts</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/nav-loader.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
