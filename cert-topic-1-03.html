@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.03 di.xml Usage - AD0-E717</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/common.css" rel="stylesheet">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+    <style>
+        body { padding-top: 20px; padding-bottom: 40px; }
+        .sidebar { position: fixed; top: 0; bottom: 0; left: -250px; width: 250px; z-index: 1000; padding: 20px 0; overflow-x: hidden; overflow-y: auto; background-color: #f8f9fa; transition: left 0.3s ease; border-right: 1px solid #dee2e6; }
+        .sidebar.show { left: 0; }
+        .sidebar-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999; display: none; }
+        .sidebar-overlay.show { display: block; }
+        .main-content { margin-left: 0; padding: 20px 15px; }
+        .mobile-menu-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: #0d6efd; color: white; border: none; border-radius: 4px; padding: 8px 12px; cursor: pointer; }
+        .mobile-menu-toggle:hover { background: #0b5ed7; }
+        .mobile-menu-toggle span { display: block; width: 20px; height: 2px; background: white; margin: 3px 0; }
+        .sidebar-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; color: #6c757d; cursor: pointer; display: none; }
+        .nav-link { color: #333; }
+        .nav-link.active { font-weight: bold; color: #0d6efd; }
+        h2 { margin-top: 30px; padding-bottom: 10px; border-bottom: 1px solid #dee2e6; }
+        h3 { margin-top: 25px; color: #0d6efd; }
+        @media (min-width: 768px) { .sidebar { left: 0; } .main-content { margin-left: 250px; padding: 20px; } .mobile-menu-toggle { display: none; } .sidebar-overlay { display: none !important; } }
+        @media (max-width: 767px) { .sidebar-close { display: block; } .main-content { padding-top: 70px; } }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 4px; border: 1px solid #dee2e6; overflow-x: auto; }
+        code { background: #f1f3f5; padding: 2px 6px; border-radius: 3px; color: #e83e8c; font-family: 'Courier New', monospace; }
+        
+        .objective-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .objective-number {
+            font-size: 3rem;
+            font-weight: 800;
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .objective-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .di-card {
+            background: white;
+            border-left: 4px solid #6610f2;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .node-badge {
+            background: #6610f2;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .key-point {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .success-box {
+            background: #d1e7dd;
+            border-left: 4px solid #198754;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background: #cfe2ff;
+            border-left: 4px solid #0d6efd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <button class="mobile-menu-toggle d-md-none" id="mobileMenuToggle">
+        <span></span><span></span><span></span>
+    </button>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div id="nav-placeholder"></div>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <div class="objective-header">
+                    <div class="objective-number">1.03</div>
+                    <h1 class="objective-title">Given a Scenario, Describe Usage of di.xml</h1>
+                    <p class="mb-0">Understanding Dependency Injection configuration, which is central to Magento's architecture.</p>
+                </div>
+
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> <strong>Why This Matters:</strong> The di.xml file dictates how classes are instantiated and configured using Dependency Injection (DI), giving you tremendous control over how objects are wired together.
+                </div>
+
+                <!-- Mind Map Section -->
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px;">
+                    <h2 style="text-align: center; margin-bottom: 20px; border: none;">
+                        <i class="fas fa-project-diagram"></i> di.xml Overview
+                    </h2>
+                    <div class="mermaid" style="display: flex; justify-content: center;">
+mindmap
+  root((di.xml))
+    Locations
+      etc/
+      etc/adminhtml/
+      etc/frontend/
+    Nodes
+      preference
+        Override classes
+        Implement interfaces
+      type
+        Modify constructor args
+        xsi:type values
+      virtualType
+        Same code different args
+      plugins
+        Interceptors
+    xsi:type Values
+      string
+      boolean
+      number
+      array
+      object
+      const
+                    </div>
+                </div>
+
+                <h2>The Concept of Dependency Injection (DI)</h2>
+                
+                <div class="di-card">
+                    <h4><i class="fas fa-cog"></i> What is Dependency Injection?</h4>
+                    <p><strong>Core Principle:</strong> A class is provided with the resources (other classes) it needs directly in its <code>__construct</code> method.</p>
+                    
+                    <div class="success-box">
+                        <p><strong>Magento uses Constructor Dependency Injection</strong></p>
+                        <ul class="mb-0">
+                            <li>Classes don't call static methods or use <code>new</code> keyword</li>
+                            <li>Classes simply declare what they need in the constructor</li>
+                            <li>Magento's DI system delivers the necessary instances automatically</li>
+                        </ul>
+                    </div>
+
+                    <p><strong>How It Works:</strong></p>
+                    <ol>
+                        <li>A class is requested (e.g., a controller executing an action)</li>
+                        <li>The Magento application loads the Dependency Injection container</li>
+                        <li>The container handles the instantiation process</li>
+                        <li>All dependencies are injected via the constructor</li>
+                    </ol>
+                </div>
+
+                <h2>Purpose and Location of di.xml</h2>
+                
+                <p>The <code>di.xml</code> configuration file is where developers explicitly instruct Magento's Object Manager how to manage class dependencies.</p>
+
+                <div class="di-card">
+                    <h4><i class="fas fa-map-marker-alt"></i> File Locations</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="info-box">
+                                <strong>Global:</strong>
+                                <pre class="mb-0"><code>etc/di.xml</code></pre>
+                                <small>Applies to all areas</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-box">
+                                <strong>Admin:</strong>
+                                <pre class="mb-0"><code>etc/adminhtml/di.xml</code></pre>
+                                <small>Admin panel only</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-box">
+                                <strong>Frontend:</strong>
+                                <pre class="mb-0"><code>etc/frontend/di.xml</code></pre>
+                                <small>Storefront only</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <h5><i class="fas fa-check-circle"></i> What You Can Do with di.xml</h5>
+                    <ol class="mb-0">
+                        <li><strong>Substitute classes</strong> using preferences</li>
+                        <li><strong>Create new classes</strong> with customized arguments using virtual types</li>
+                        <li><strong>Change constructor arguments</strong> for a specific class using the type element</li>
+                        <li><strong>Register custom routers</strong></li>
+                    </ol>
+                </div>
+
+                <h2>Key Usages of di.xml in Scenarios</h2>
+
+                <h3>1. Overriding or Implementing Classes (<code>&lt;preference&gt;</code> Node)</h3>
+                
+                <div class="di-card">
+                    <div class="node-badge">&lt;preference&gt;</div>
+                    
+                    <p><strong>Scenario:</strong> A developer needs to ensure that whenever an interface is requested in a constructor, a specific implementation class is used, or they need to override a public class to modify a private/protected method.</p>
+
+                    <p><strong>Purpose:</strong></p>
+                    <ul>
+                        <li>Substitute the requested class or interface (<code>for</code> attribute)</li>
+                        <li>With a different, concrete class (<code>type</code> attribute)</li>
+                    </ul>
+
+                    <p><strong>Example: Implementing an Interface</strong></p>
+                    <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd"&gt;
+    &lt;preference for="Magento\Catalog\Api\ProductRepositoryInterface"
+                type="Magento\Catalog\Model\ProductRepository" /&gt;
+&lt;/config&gt;</code></pre>
+
+                    <p><strong>Example: Overriding a Class (Bonlineco)</strong></p>
+                    <pre><code>&lt;preference for="Magento\Checkout\Block\Cart\Item\Renderer"
+                type="Bonlineco\CustomCheckout\Block\Cart\Item\Renderer" /&gt;</code></pre>
+
+                    <div class="key-point">
+                        <strong>How It Works:</strong>
+                        <ul class="mb-0">
+                            <li>When a class requests <code>ProductRepositoryInterface</code>, Magento checks di.xml</li>
+                            <li>If a preference is found, it uses the class specified in the <code>type</code> attribute</li>
+                            <li>This substitution happens system-wide</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>⚠️ Use Preferences Sparingly!</strong>
+                        <ul class="mb-0">
+                            <li><strong>Primary use:</strong> Specify an implementation for an interface</li>
+                            <li><strong>Secondary use:</strong> Modify private or protected methods (which cannot be done with plugins)</li>
+                            <li><strong>Problem:</strong> Only ONE preference can exist for a class - conflicts are common!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>2. Modifying Constructor Arguments (<code>&lt;type&gt;</code> Node)</h3>
+
+                <div class="di-card">
+                    <div class="node-badge">&lt;type&gt;</div>
+                    
+                    <p><strong>Scenario:</strong> A developer needs to change the default configuration value or dependency object passed to the constructor of a specific class without affecting how that dependency is used elsewhere.</p>
+
+                    <p><strong>Purpose:</strong> Surgical precision to modify how a specific class receives its dependencies.</p>
+
+                    <p><strong>Example: Modifying String Argument</strong></p>
+                    <pre><code>&lt;type name="Bonlineco\Blog\Model\PostRepository"&gt;
+    &lt;arguments&gt;
+        &lt;argument name="sort" xsi:type="string"&gt;created_at DESC&lt;/argument&gt;
+        &lt;argument name="pageSize" xsi:type="number"&gt;10&lt;/argument&gt;
+        &lt;argument name="isActive" xsi:type="boolean"&gt;true&lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/type&gt;</code></pre>
+
+                    <p><strong>Example: Injecting Different Object</strong></p>
+                    <pre><code>&lt;type name="Magento\Catalog\Model\Product"&gt;
+    &lt;arguments&gt;
+        &lt;argument name="logger" xsi:type="object"&gt;Bonlineco\Logger\CustomLogger&lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/type&gt;</code></pre>
+
+                    <p><strong>Example: Passing an Array</strong></p>
+                    <pre><code>&lt;type name="Bonlineco\Blog\Model\PostFilters"&gt;
+    &lt;arguments&gt;
+        &lt;argument name="filters" xsi:type="array"&gt;
+            &lt;item name="status" xsi:type="string"&gt;published&lt;/item&gt;
+            &lt;item name="featured" xsi:type="boolean"&gt;true&lt;/item&gt;
+        &lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/type&gt;</code></pre>
+
+                    <h4 class="mt-4">xsi:type Values</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>xsi:type</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>string</code></td>
+                                    <td>Hard-codes a string value</td>
+                                    <td><code>&lt;argument name="sort" xsi:type="string"&gt;created_at ASC&lt;/argument&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>boolean</code></td>
+                                    <td>Hard-codes a boolean (true/false)</td>
+                                    <td><code>&lt;argument name="isActive" xsi:type="boolean"&gt;true&lt;/argument&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>number</code></td>
+                                    <td>Hard-codes a numeric value</td>
+                                    <td><code>&lt;argument name="limit" xsi:type="number"&gt;100&lt;/argument&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>array</code></td>
+                                    <td>Generates an array with multiple items</td>
+                                    <td><code>&lt;argument name="filters" xsi:type="array"&gt;...&lt;/argument&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>object</code></td>
+                                    <td>Injects another class or virtual type</td>
+                                    <td><code>&lt;argument name="logger" xsi:type="object"&gt;CustomLogger&lt;/argument&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>const</code></td>
+                                    <td>Uses a PHP class constant value</td>
+                                    <td><code>&lt;argument name="state" xsi:type="const"&gt;Class::CONSTANT&lt;/argument&gt;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="success-box">
+                        <strong>Key Benefit:</strong> You can modify dependencies for one specific class without affecting other classes that use the same dependency.
+                    </div>
+                </div>
+
+                <h3>3. Creating Unique Class Configurations (<code>&lt;virtualType&gt;</code> Node)</h3>
+
+                <div class="di-card">
+                    <div class="node-badge">&lt;virtualType&gt;</div>
+                    
+                    <p><strong>Scenario:</strong> A developer needs to create a unique instance of an existing class where the code is the same, but the dependencies passed to its constructor are different.</p>
+
+                    <p><strong>Purpose:</strong> Create a new "class" with the same code as another class, but with different dependencies.</p>
+
+                    <p><strong>Example: Virtual Logger</strong></p>
+                    <pre><code>&lt;virtualType name="BonlinecoDebugLogger" type="Magento\Framework\Logger\Monolog"&gt;
+    &lt;arguments&gt;
+        &lt;argument name="name" xsi:type="string"&gt;bonlinecoDebug&lt;/argument&gt;
+        &lt;argument name="handlers" xsi:type="array"&gt;
+            &lt;item name="debug" xsi:type="object"&gt;Bonlineco\Logger\Handler\Debug&lt;/item&gt;
+        &lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/virtualType&gt;
+
+&lt;!-- Then inject the virtual type --&gt;
+&lt;type name="Bonlineco\Blog\Model\PostRepository"&gt;
+    &lt;arguments&gt;
+        &lt;argument name="logger" xsi:type="object"&gt;BonlinecoDebugLogger&lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/type&gt;</code></pre>
+
+                    <p><strong>Example: Custom Collection</strong></p>
+                    <pre><code>&lt;virtualType name="Bonlineco\Blog\Model\ResourceModel\Post\Grid\Collection" 
+             type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult"&gt;
+    &lt;arguments&gt;
+        &lt;argument name="mainTable" xsi:type="string"&gt;bonlineco_blog_post&lt;/argument&gt;
+        &lt;argument name="resourceModel" xsi:type="string"&gt;Bonlineco\Blog\Model\ResourceModel\Post&lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/virtualType&gt;</code></pre>
+
+                    <div class="info-box">
+                        <strong>What Happens When Debugging:</strong>
+                        <ul class="mb-0">
+                            <li>The class instantiated will be the original <code>type</code> class</li>
+                            <li>But Magento uses the new constructor arguments from the virtualType</li>
+                            <li>This allows reusing the same code with different configurations</li>
+                        </ul>
+                    </div>
+
+                    <div class="key-point">
+                        <strong>Use Case:</strong> Same functionality (code base), different dependencies - perfect for configuration variations!
+                    </div>
+                </div>
+
+                <h3>4. Enabling Plugins (Interceptors)</h3>
+
+                <div class="di-card">
+                    <div class="node-badge">Interceptors</div>
+                    
+                    <p><strong>How the DI System Enables Plugins:</strong></p>
+
+                    <ol>
+                        <li>When Magento attempts to instantiate a class that has active, configured plugins...</li>
+                        <li>The Object Manager intercepts the process</li>
+                        <li>It appends <code>\Interceptor</code> to the class path</li>
+                        <li>Example: <code>OrderData</code> becomes <code>OrderData\Interceptor</code></li>
+                        <li>This Interceptor class is auto-generated in the <code>generated/</code> directory</li>
+                        <li>The Interceptor triggers plugins (before, around, after) when methods are called</li>
+                    </ol>
+
+                    <p><strong>Example: Class with Plugins</strong></p>
+                    <pre><code>// Original Class
+Magento\Sales\Model\Order
+
+// When plugins are configured
+Magento\Sales\Model\Order\Interceptor  (auto-generated)</code></pre>
+
+                    <div class="info-box">
+                        <strong>Behind the Scenes:</strong>
+                        <ul class="mb-0">
+                            <li>Plugins are defined in <code>di.xml</code> using <code>&lt;plugin&gt;</code> nodes</li>
+                            <li>The DI system generates Interceptor classes automatically</li>
+                            <li>Interceptors wrap the original class methods</li>
+                            <li>This allows before, after, and around plugins to execute</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Plugin Example</h2>
+                <div class="di-card">
+                    <h4><i class="fas fa-plug"></i> Declaring a Plugin in di.xml</h4>
+                    <p><strong>Syntax:</strong></p>
+                    <pre><code>&lt;type name="ClassName\To\Intercept"&gt;
+    &lt;plugin name="unique_plugin_name" 
+            type="Your\Plugin\Class" 
+            sortOrder="10" 
+            disabled="false"/&gt;
+&lt;/type&gt;</code></pre>
+
+                    <p><strong>Example: Plugin to modify product save</strong></p>
+                    <pre><code>&lt;!-- Bonlineco/Blog/etc/di.xml --&gt;
+&lt;type name="Magento\Catalog\Model\ProductRepository"&gt;
+    &lt;plugin name="bonlineco_blog_product_plugin" 
+            type="Bonlineco\Blog\Plugin\ProductRepositoryPlugin" 
+            sortOrder="10"/&gt;
+&lt;/type&gt;</code></pre>
+
+                    <p><strong>Plugin Class Implementation:</strong></p>
+                    <pre><code>&lt;?php
+namespace Bonlineco\Blog\Plugin;
+
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Catalog\Model\ProductRepository;
+
+class ProductRepositoryPlugin
+{
+    /**
+     * Before plugin - Executes before the method
+     */
+    public function beforeSave(
+        ProductRepository $subject,
+        ProductInterface $product,
+        $saveOptions = false
+    ) {
+        // Modify product before save
+        $product->setCustomAttribute('modified_by_plugin', 'bonlineco');
+        return [$product, $saveOptions];
+    }
+
+    /**
+     * After plugin - Executes after the method
+     */
+    public function afterGet(
+        ProductRepository $subject,
+        ProductInterface $result
+    ) {
+        // Modify result after retrieval
+        $result->setCustomAttribute('loaded_by', 'bonlineco_blog');
+        return $result;
+    }
+
+    /**
+     * Around plugin - Wraps the entire method
+     */
+    public function aroundSave(
+        ProductRepository $subject,
+        callable $proceed,
+        ProductInterface $product,
+        $saveOptions = false
+    ) {
+        // Before original method
+        $startTime = microtime(true);
+        
+        // Call original method
+        $result = $proceed($product, $saveOptions);
+        
+        // After original method
+        $endTime = microtime(true);
+        // Log execution time...
+        
+        return $result;
+    }
+}</code></pre>
+
+                    <div class="info-box">
+                        <strong>Plugin Method Naming:</strong>
+                        <ul class="mb-0">
+                            <li><code>before{MethodName}</code> - Runs before the method</li>
+                            <li><code>after{MethodName}</code> - Runs after the method</li>
+                            <li><code>around{MethodName}</code> - Wraps the method completely</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Complete di.xml Example</h2>
+                <div class="di-card">
+                    <h4><i class="fas fa-file-code"></i> Bonlineco/Blog/etc/di.xml</h4>
+                    <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd"&gt;
+    
+    &lt;!-- Preference: Implement interface --&gt;
+    &lt;preference for="Bonlineco\Blog\Api\PostRepositoryInterface"
+                type="Bonlineco\Blog\Model\PostRepository" /&gt;
+    
+    &lt;!-- Type: Modify constructor arguments --&gt;
+    &lt;type name="Bonlineco\Blog\Model\PostRepository"&gt;
+        &lt;arguments&gt;
+            &lt;argument name="pageSize" xsi:type="number"&gt;20&lt;/argument&gt;
+            &lt;argument name="defaultSort" xsi:type="string"&gt;created_at DESC&lt;/argument&gt;
+        &lt;/arguments&gt;
+    &lt;/type&gt;
+    
+    &lt;!-- Virtual Type: Custom logger configuration --&gt;
+    &lt;virtualType name="BonlinecoDebugLogger" type="Magento\Framework\Logger\Monolog"&gt;
+        &lt;arguments&gt;
+            &lt;argument name="name" xsi:type="string"&gt;bonlinecoBlogDebug&lt;/argument&gt;
+        &lt;/arguments&gt;
+    &lt;/virtualType&gt;
+    
+    &lt;!-- Inject virtual type --&gt;
+    &lt;type name="Bonlineco\Blog\Controller\Post\Save"&gt;
+        &lt;arguments&gt;
+            &lt;argument name="logger" xsi:type="object"&gt;BonlinecoDebugLogger&lt;/argument&gt;
+        &lt;/arguments&gt;
+    &lt;/type&gt;
+    
+    &lt;!-- Plugin: Add custom functionality to product repository --&gt;
+    &lt;type name="Magento\Catalog\Model\ProductRepository"&gt;
+        &lt;plugin name="bonlineco_blog_product_plugin" 
+                type="Bonlineco\Blog\Plugin\ProductRepositoryPlugin" 
+                sortOrder="10" 
+                disabled="false"/&gt;
+    &lt;/type&gt;
+    
+&lt;/config&gt;</code></pre>
+                </div>
+
+                <h2>Quick Reference</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Node</th>
+                                <th>Purpose</th>
+                                <th>When to Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>&lt;preference&gt;</code></td>
+                                <td>Replace/implement classes</td>
+                                <td>Implement interfaces, override private/protected methods</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;type&gt;</code></td>
+                                <td>Modify constructor args</td>
+                                <td>Change dependencies for a specific class</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;virtualType&gt;</code></td>
+                                <td>Create config variations</td>
+                                <td>Same code, different constructor arguments</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;plugin&gt;</code></td>
+                                <td>Intercept methods</td>
+                                <td>Modify behavior before/after/around methods</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Exam Tips</h2>
+                <div class="alert alert-warning">
+                    <h4><i class="fas fa-lightbulb"></i> Key Points to Remember</h4>
+                    <ul class="mb-0">
+                        <li>Know the 3 locations for di.xml: <code>etc/</code>, <code>etc/adminhtml/</code>, <code>etc/frontend/</code></li>
+                        <li>Understand when to use <code>&lt;preference&gt;</code> vs <code>&lt;type&gt;</code> vs <code>&lt;virtualType&gt;</code></li>
+                        <li>Remember all 6 xsi:type values: string, boolean, number, array, object, const</li>
+                        <li><strong>Preferences are global</strong> - only one can exist per class (conflict prone!)</li>
+                        <li><code>&lt;type&gt;</code> affects only the specified class, not system-wide</li>
+                        <li>Virtual types have the same code as the base type, just different constructor args</li>
+                        <li>Plugins create Interceptor classes in the <code>generated/</code> directory</li>
+                        <li>Constructor injection is the ONLY dependency injection method Magento uses</li>
+                    </ul>
+                </div>
+
+                <div class="mt-4">
+                    <a href="cert-topic-1-02.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.02 Module Structure</a>
+                    <a href="cert-topic-1-04.html" class="btn btn-primary float-end">Next: 1.04 Plugins & Observers <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/nav-loader.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>
