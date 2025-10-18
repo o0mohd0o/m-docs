@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1.09 Cron Functionality - AD0-E717</title>
+    <title>1.10 Custom Module Routes - AD0-E717</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="css/common.css" rel="stylesheet">
@@ -106,16 +106,16 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
                 <div class="objective-header">
-                    <div class="objective-number">1.09</div>
-                    <h1 class="objective-title">Cron Functionality</h1>
-                    <p class="mb-0">Understanding how to configure and run scheduled background tasks in Magento 2.</p>
+                    <div class="objective-number">1.10</div>
+                    <h1 class="objective-title">Custom Module Routes</h1>
+                    <p class="mb-0">Understanding Magento's routing system, standard routes, and creating custom routers for unique URL schemas.</p>
                 </div>
 
-                <?php require 'includes/topics/1-09/content.php'; ?>
+                <?php require 'includes/topics/1-10/content.php'; ?>
 
                 <div class="mt-4">
-                    <a href="cert-topic-1-08.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.08 Localization</a>
-                    <a href="cert-topic-1-10.php" class="btn btn-primary float-end">Next: 1.10 Custom Routes <i class="fas fa-arrow-right"></i></a>
+                    <a href="cert-topic-1-09.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.09 Cron Functionality</a>
+                    <a href="cert-overview.html" class="btn btn-primary float-end">Back to Overview <i class="fas fa-home"></i></a>
                 </div>
             </main>
         </div>
