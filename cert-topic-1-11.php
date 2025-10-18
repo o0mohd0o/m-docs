@@ -115,7 +115,7 @@
 
                 <div class="mt-4">
                     <a href="cert-topic-1-10.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.10 Custom Routes</a>
-                    <a href="cert-overview.html" class="btn btn-primary float-end">Back to Overview <i class="fas fa-home"></i></a>
+                    <a href="cert-overview.php" class="btn btn-primary float-end">Back to Overview <i class="fas fa-home"></i></a>
                 </div>
             </main>
         </div>

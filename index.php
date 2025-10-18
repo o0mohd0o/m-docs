@@ -277,40 +277,13 @@
         }
 
         /* Color Variants */
-        .doc-card.sales {
-            --card-color: #0d6efd;
-            --card-color-light: #6ea8fe;
-        }
-
-        .doc-card.catalog {
-            --card-color: #198754;
-            --card-color-light: #75b798;
-        }
-
-        .doc-card.customer {
-            --card-color: #0dcaf0;
-            --card-color-light: #6edff6;
-        }
-
-        .doc-card.eav {
-            --card-color: #6f42c1;
-            --card-color-light: #a98eda;
-        }
-
-        .doc-card.inventory {
-            --card-color: #fd7e14;
-            --card-color-light: #feb272;
-        }
-
-        .doc-card.cms {
-            --card-color: #d63384;
-            --card-color-light: #e685b5;
-        }
-
-        .doc-card.cert {
-            --card-color: #ffc107;
-            --card-color-light: #ffda6a;
-        }
+        .doc-card.sales { --card-color: #0d6efd; --card-color-light: #6ea8fe; }
+        .doc-card.catalog { --card-color: #198754; --card-color-light: #75b798; }
+        .doc-card.customer { --card-color: #0dcaf0; --card-color-light: #6edff6; }
+        .doc-card.eav { --card-color: #6f42c1; --card-color-light: #a98eda; }
+        .doc-card.inventory { --card-color: #fd7e14; --card-color-light: #feb272; }
+        .doc-card.cms { --card-color: #d63384; --card-color-light: #e685b5; }
+        .doc-card.cert { --card-color: #ffc107; --card-color-light: #ffda6a; }
 
         /* Feature Grid */
         .feature-grid {
@@ -349,48 +322,21 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .search-box {
-                display: none;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
+            .hero h2 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .stats { flex-direction: column; gap: 20px; }
+            .card-grid { grid-template-columns: 1fr; }
+            .search-box { display: none; }
+            .section-title { font-size: 1.5rem; }
         }
 
         /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .doc-card {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
+        .doc-card { animation: fadeInUp 0.6s ease-out; }
         .doc-card:nth-child(1) { animation-delay: 0.1s; }
         .doc-card:nth-child(2) { animation-delay: 0.2s; }
         .doc-card:nth-child(3) { animation-delay: 0.3s; }
@@ -403,7 +349,7 @@
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <a href="index-new.html" class="logo">
+            <a href="index.php" class="logo">
                 <div class="logo-icon">
                     <i class="fas fa-database"></i>
                 </div>
@@ -456,7 +402,7 @@
 
         <div class="card-grid">
             <!-- Database Overview Card -->
-            <a href="database-overview.html" class="doc-card" style="--card-color: #6f42c1; --card-color-light: #a98eda; grid-column: 1 / -1;">
+            <a href="database-overview.php" class="doc-card" style="--card-color: #6f42c1; --card-color-light: #a98eda; grid-column: 1 / -1;">
                 <div class="card-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
@@ -478,7 +424,7 @@
             </a>
 
             <!-- Sales & Orders Card -->
-            <a href="sales.html" class="doc-card sales">
+            <a href="sales.php" class="doc-card sales">
                 <div class="card-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
@@ -500,7 +446,7 @@
             </a>
 
             <!-- Catalog Card -->
-            <a href="catalog.html" class="doc-card catalog">
+            <a href="catalog.php" class="doc-card catalog">
                 <div class="card-icon">
                     <i class="fas fa-box"></i>
                 </div>
@@ -522,7 +468,7 @@
             </a>
 
             <!-- Customer Card -->
-            <a href="customer.html" class="doc-card customer">
+            <a href="customer.php" class="doc-card customer">
                 <div class="card-icon">
                     <i class="fas fa-user"></i>
                 </div>
@@ -544,7 +490,7 @@
             </a>
 
             <!-- EAV Card -->
-            <a href="eav.html" class="doc-card eav">
+            <a href="eav.php" class="doc-card eav">
                 <div class="card-icon">
                     <i class="fas fa-link"></i>
                 </div>
@@ -566,7 +512,7 @@
             </a>
 
             <!-- Inventory Card -->
-            <a href="inventory.html" class="doc-card inventory">
+            <a href="inventory.php" class="doc-card inventory">
                 <div class="card-icon">
                     <i class="fas fa-warehouse"></i>
                 </div>
@@ -588,7 +534,7 @@
             </a>
 
             <!-- CMS Card -->
-            <a href="cms.html" class="doc-card cms">
+            <a href="cms.php" class="doc-card cms">
                 <div class="card-icon">
                     <i class="fas fa-file-alt"></i>
                 </div>
@@ -622,7 +568,7 @@
         </div>
 
         <div class="card-grid">
-            <a href="cert-overview.html" class="doc-card cert">
+            <a href="cert-overview.php" class="doc-card cert">
                 <div class="card-icon">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
@@ -694,8 +640,7 @@
         document.getElementById('searchInput').addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase();
             if (query.length < 2) return;
-            
-            // Simple client-side search - could be enhanced
+            // Placeholder for future search implementation
             console.log('Searching for:', query);
         });
 

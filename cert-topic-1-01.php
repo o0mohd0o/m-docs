@@ -62,7 +62,7 @@
                 <?php require 'includes/topics/1-01/content.php'; ?>
 
                 <div class="mt-4">
-                    <a href="cert-overview.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Overview</a>
+                    <a href="cert-overview.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Overview</a>
                     <a href="cert-topic-1-02.php" class="btn btn-primary float-end">Next: 1.02 Module Structure <i class="fas fa-arrow-right"></i></a>
                 </div>
             </main>

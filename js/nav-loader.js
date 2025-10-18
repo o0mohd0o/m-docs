@@ -34,8 +34,9 @@
     }
 
     function setActiveNavItem() {
-        // Get current page filename
-        const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+        // Get current page filename (support .html and .php)
+        const currentPage = (window.location.pathname.split('/').pop() || '')
+            .replace(/\.(html|php)$/i, '') || 'index';
         
         // Find and activate the matching nav link
         const navLinks = document.querySelectorAll('.sidebar .nav-link');

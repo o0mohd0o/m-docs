@@ -347,7 +347,7 @@
     <header class="header">
         <div class="header-content">
             <div class="breadcrumb-nav">
-                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="index.php"><i class="fas fa-home"></i> Home</a>
                 <span>/</span>
                 <span>Certification Guide</span>
             </div>
@@ -356,7 +356,7 @@
                     <i class="fas fa-check-circle"></i>
                     Practice Questions
                 </a>
-                <a href="index.html" class="btn-header btn-primary-header">
+                <a href="index.php" class="btn-header btn-primary-header">
                     <i class="fas fa-database"></i>
                     Database Docs
                 </a>
@@ -423,8 +423,8 @@
                     <h4>Architecture & Customization</h4>
                     <p style="color: #666;">Understanding Magento architecture, module development, plugin system, and customization techniques.</p>
                     <div class="topic-links">
-                        <a href="cert-architecture.html" class="topic-link topic-link-primary">Study Architecture</a>
-                        <a href="cert-customization.html" class="topic-link topic-link-secondary">Customization</a>
+                        <a href="cert-topic-1-01.php" class="topic-link topic-link-primary">Study Architecture</a>
+                        <a href="cert-topic-1-04.php" class="topic-link topic-link-secondary">Customization</a>
                     </div>
                 </div>
 
@@ -433,8 +433,8 @@
                     <h4>Database & Data Models</h4>
                     <p style="color: #666;">Working with database schema, EAV system, data models, collections, and repositories.</p>
                     <div class="topic-links">
-                        <a href="cert-database.html" class="topic-link topic-link-primary">Study Database</a>
-                        <a href="index.html" class="topic-link topic-link-secondary">DB Docs</a>
+                        <a href="database-overview.php" class="topic-link topic-link-primary">Study Database</a>
+                        <a href="index.php" class="topic-link topic-link-secondary">DB Docs</a>
                     </div>
                 </div>
 
@@ -452,7 +452,7 @@
                     <h4>Business Logic & Config</h4>
                     <p style="color: #666;">Business logic implementation, dependency injection, configuration, and API development.</p>
                     <div class="topic-links">
-                        <a href="cert-customization.html" class="topic-link topic-link-primary">Study More</a>
+                        <a href="cert-topic-1-03.php" class="topic-link topic-link-primary">Study More</a>
                     </div>
                 </div>
             </div>
@@ -478,19 +478,19 @@
                     <tr>
                         <td><span class="phase-badge">1</span></td>
                         <td>Architecture & Module Development</td>
-                        <td><a href="cert-architecture.html">Architecture Guide</a></td>
+                        <td><a href="cert-topic-1-01.php">Architecture Guide</a></td>
                         <td>1-2 weeks</td>
                     </tr>
                     <tr>
                         <td><span class="phase-badge">2</span></td>
                         <td>Customization Techniques</td>
-                        <td><a href="cert-customization.html">Customization Guide</a></td>
+                        <td><a href="cert-topic-1-04.php">Customization Guide</a></td>
                         <td>1-2 weeks</td>
                     </tr>
                     <tr>
                         <td><span class="phase-badge">3</span></td>
                         <td>Database & Models</td>
-                        <td><a href="cert-database.html">Database Guide</a></td>
+                        <td><a href="database-overview.php">Database Guide</a></td>
                         <td>1 week</td>
                     </tr>
                     <tr>

@@ -1,7 +1,7 @@
 
 
-# Serve index.html before index.php
-DirectoryIndex index.html index.php
+# Serve index.php before index.html
+DirectoryIndex index.php index.html
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php82” package as the default “PHP” programming language.
