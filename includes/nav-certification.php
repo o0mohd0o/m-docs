@@ -85,7 +85,7 @@
         <div class="nav-section-title px-3">Domain 3: Database (24%)</div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="cert-database.html" data-page="cert-database">
+                <a class="nav-link" href="cert-database.php" data-page="cert-database">
                     <i class="fas fa-database"></i> 3.04 Models & Collections
                 </a>
             </li>
@@ -95,7 +95,7 @@
         <div class="nav-section-title px-3">Domain 4: UI Development (18%)</div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="cert-ui.html" data-page="cert-ui">
+                <a class="nav-link" href="cert-ui.php" data-page="cert-ui">
                     <i class="fas fa-paint-brush"></i> 4.02 Layout XML
                 </a>
             </li>
@@ -105,7 +105,7 @@
         <div class="nav-section-title px-3">Practice & Resources</div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="cert-practice.html" data-page="cert-practice">
+                <a class="nav-link" href="cert-practice.php" data-page="cert-practice">
                     <i class="fas fa-check-circle"></i> Practice Questions
                 </a>
             </li>

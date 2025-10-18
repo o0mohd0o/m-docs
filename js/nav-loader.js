@@ -14,11 +14,11 @@
         const currentPage = window.location.pathname.split('/').pop();
         
         // Auto-detect navigation type based on page name
-        let navFile = 'includes/nav-database.html';
+        let navFile = 'includes/nav-database.php';
         if (currentPage.startsWith('cert-')) {
-            navFile = 'includes/nav-certification.html';
+            navFile = 'includes/nav-certification.php';
         } else if (navType === 'certification') {
-            navFile = 'includes/nav-certification.html';
+            navFile = 'includes/nav-certification.php';
         }
 
         fetch(navFile)

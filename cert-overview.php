@@ -352,7 +352,7 @@
                 <span>Certification Guide</span>
             </div>
             <div class="header-actions">
-                <a href="cert-practice.html" class="btn-header btn-outline-header">
+                <a href="cert-practice.php" class="btn-header btn-outline-header">
                     <i class="fas fa-check-circle"></i>
                     Practice Questions
                 </a>
@@ -443,7 +443,7 @@
                     <h4>UI & Frontend Development</h4>
                     <p style="color: #666;">Layout XML, blocks, templates, JavaScript components, and theme development.</p>
                     <div class="topic-links">
-                        <a href="cert-ui.html" class="topic-link topic-link-primary">Study UI</a>
+                        <a href="cert-ui.php" class="topic-link topic-link-primary">Study UI</a>
                     </div>
                 </div>
 
@@ -496,13 +496,13 @@
                     <tr>
                         <td><span class="phase-badge">4</span></td>
                         <td>UI Development</td>
-                        <td><a href="cert-ui.html">UI Guide</a></td>
+                        <td><a href="cert-ui.php">UI Guide</a></td>
                         <td>1 week</td>
                     </tr>
                     <tr>
                         <td><span class="phase-badge">5</span></td>
                         <td>Practice & Review</td>
-                        <td><a href="cert-practice.html">Practice Questions</a></td>
+                        <td><a href="cert-practice.php">Practice Questions</a></td>
                         <td>1 week</td>
                     </tr>
                 </tbody>

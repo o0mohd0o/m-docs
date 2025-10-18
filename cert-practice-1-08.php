@@ -53,13 +53,13 @@
                     <button class="retake-btn" onclick="retakeQuiz()">
                         <i class="fas fa-redo"></i> Retake Quiz
                     </button>
-                    <a href="cert-practice.html" class="btn btn-outline-primary mt-2">
+                    <a href="cert-practice.php" class="btn btn-outline-primary mt-2">
                         <i class="fas fa-list"></i> Back to Quiz Menu
                     </a>
                 </div>
 
                 <div class="mt-4">
-                    <a href="cert-practice.html" class="btn btn-secondary">
+                    <a href="cert-practice.php" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Back to Quiz Menu
                     </a>
                     <a href="cert-topic-1-08.php" class="btn btn-outline-secondary">
