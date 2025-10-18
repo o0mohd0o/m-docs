@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice: 1.07 Index Functionality - AD0-E717</title>
+    <title>Practice: 1.10 Custom Module Routes - AD0-E717</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="css/common.css" rel="stylesheet">
@@ -22,15 +22,15 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
                 <div class="quiz-header">
-                    <div class="topic-badge">1.07</div>
-                    <h1><i class="fas fa-database"></i> Index Functionality</h1>
-                    <p class="mb-0">18 Questions</p>
+                    <div class="topic-badge">1.10</div>
+                    <h1><i class="fas fa-route"></i> Custom Module Routes</h1>
+                    <p class="mb-0">22 Questions</p>
                 </div>
 
                 <div class="progress-container">
                     <div class="d-flex justify-content-between mb-2">
                         <span>Progress</span>
-                        <span id="progressText">0/18</span>
+                        <span id="progressText">0/22</span>
                     </div>
                     <div class="progress-bar-wrapper">
                         <div class="progress-bar-fill" id="progressBar"></div>
@@ -62,8 +62,8 @@
                     <a href="cert-practice.html" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Back to Quiz Menu
                     </a>
-                    <a href="cert-topic-1-07.php" class="btn btn-outline-secondary">
-                        <i class="fas fa-book"></i> Study Topic 1.07
+                    <a href="cert-topic-1-10.php" class="btn btn-outline-secondary">
+                        <i class="fas fa-book"></i> Study Topic 1.10
                     </a>
                 </div>
             </main>
@@ -73,7 +73,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/nav-loader.js"></script>
     <script src="js/common.js"></script>
-    <script src="includes/practice/1-07/questions.js"></script>
+    <script src="includes/practice/1-10/questions.js"></script>
     <script src="js/quiz-engine.js"></script>
-  </body>
-  </html>
+</body>
+</html>

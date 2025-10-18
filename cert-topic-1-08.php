@@ -156,7 +156,7 @@
                 <?php require 'includes/topics/1-08/part-c.php'; ?>
 
                 <div class="mt-4">
-                    <a href="cert-topic-1-07.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.07 Index Functionality</a>
+                    <a href="cert-topic-1-07.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.07 Index Functionality</a>
                     <a href="cert-topic-1-09.php" class="btn btn-primary float-end">Next: 1.09 Cron Functionality <i class="fas fa-arrow-right"></i></a>
                 </div>
             </main>
