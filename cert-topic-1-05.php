@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1.03 di.xml Usage - AD0-E717</title>
+    <title>1.05 Create Controllers - AD0-E717</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="css/common.css" rel="stylesheet">
@@ -33,8 +33,7 @@
         .objective-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
         .objective-number { font-size: 3rem; font-weight: 800; opacity: 0.3; line-height: 1; }
         .objective-title { font-size: 1.8rem; font-weight: 700; margin: 10px 0; }
-        .di-card { background: white; border-left: 4px solid #6610f2; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .node-badge { background: #6610f2; color: white; padding: 4px 12px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9rem; font-weight: 600; display: inline-block; margin-bottom: 10px; }
+        .concept-card { background: white; border-left: 4px solid #6610f2; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .key-point { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 4px; }
         .warning-box { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 15px 0; border-radius: 4px; }
         .success-box { background: #d1e7dd; border-left: 4px solid #198754; padding: 15px; margin: 15px 0; border-radius: 4px; }
@@ -54,16 +53,16 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
                 <div class="objective-header">
-                    <div class="objective-number">1.03</div>
-                    <h1 class="objective-title">Given a Scenario, Describe Usage of di.xml</h1>
-                    <p class="mb-0">Understanding Dependency Injection configuration, which is central to Magento's architecture.</p>
+                    <div class="objective-number">1.05</div>
+                    <h1 class="objective-title">Create Controllers</h1>
+                    <p class="mb-0">Understanding controllers as entry points for custom functionality via URLs.</p>
                 </div>
 
-                <?php require 'includes/topics/1-03/content.php'; ?>
+                <?php require 'includes/topics/1-05/content.php'; ?>
 
                 <div class="mt-4">
-                    <a href="cert-topic-1-02.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.02 Module Structure</a>
-                    <a href="cert-topic-1-04.php" class="btn btn-primary float-end">Next: 1.04 Plugins & Observers <i class="fas fa-arrow-right"></i></a>
+                    <a href="cert-topic-1-04.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.04 Plugins & Observers</a>
+                    <a href="cert-topic-1-06.php" class="btn btn-primary float-end">Next: 1.06 CLI Commands <i class="fas fa-arrow-right"></i></a>
                 </div>
             </main>
         </div>

@@ -61,7 +61,7 @@
                 <?php require 'includes/topics/1-07/content.php'; ?>
 
                 <div class="mt-4">
-                    <a href="cert-topic-1-06.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.06 CLI Commands</a>
+                    <a href="cert-topic-1-06.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous: 1.06 CLI Commands</a>
                     <a href="cert-topic-1-08.php" class="btn btn-primary float-end">Next: 1.08 Localization <i class="fas fa-arrow-right"></i></a>
                 </div>
             </main>

@@ -62,7 +62,7 @@
                     <a href="cert-practice.html" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Back to Quiz Menu
                     </a>
-                    <a href="cert-topic-1-04.html" class="btn btn-outline-secondary">
+                    <a href="cert-topic-1-04.php" class="btn btn-outline-secondary">
                         <i class="fas fa-book"></i> Study Topic 1.04
                     </a>
                 </div>
