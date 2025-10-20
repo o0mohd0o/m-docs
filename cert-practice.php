@@ -102,6 +102,11 @@ include 'includes/head.php';
             <div class="practice-title">ACL & Roles</div>
             <div class="practice-meta"><i class="far fa-clock me-1"></i>28 Questions</div>
           </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-2-02.php">
+            <span class="topic-badge">2.02</span>
+            <div class="practice-title">Admin Grid/Form</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
         </div>
 
         <div class="mt-4">

@@ -99,6 +99,11 @@
                     <i class="fas fa-user-shield"></i> 2.01 ACL & Roles
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-2-02.php" data-page="cert-topic-2-02">
+                    <i class="fas fa-th"></i> 2.02 Admin Grid/Form
+                </a>
+            </li>
         </ul>
 
         <!-- Domain 3: Database (24%) -->
