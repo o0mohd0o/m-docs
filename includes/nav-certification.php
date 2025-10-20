@@ -91,6 +91,16 @@
             </li>
         </ul>
 
+        <!-- Domain 2: Working with Admin (16%) -->
+        <div class="nav-section-title px-3">Domain 2: Working with Admin (16%)</div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-2-01.php" data-page="cert-topic-2-01">
+                    <i class="fas fa-user-shield"></i> 2.01 ACL & Roles
+                </a>
+            </li>
+        </ul>
+
         <!-- Domain 3: Database (24%) -->
         <div class="nav-section-title px-3">Domain 3: Database (24%)</div>
         <ul class="nav flex-column">

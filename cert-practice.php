@@ -97,6 +97,11 @@ include 'includes/head.php';
             <div class="practice-title">Stores & Scope</div>
             <div class="practice-meta"><i class="far fa-clock me-1"></i>26 Questions</div>
           </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-2-01.php">
+            <span class="topic-badge">2.01</span>
+            <div class="practice-title">ACL & Roles</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>28 Questions</div>
+          </a>
         </div>
 
         <div class="mt-4">
