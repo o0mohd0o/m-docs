@@ -104,11 +104,21 @@
                     <i class="fas fa-th"></i> 2.02 Admin Grid/Form
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-2-03.php" data-page="cert-topic-2-03">
+                    <i class="fas fa-cog"></i> 2.03 System Config
+                </a>
+            </li>
         </ul>
 
         <!-- Domain 3: Database (24%) -->
         <div class="nav-section-title px-3">Domain 3: Database (24%)</div>
         <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-3-01.php" data-page="cert-topic-3-01">
+                    <i class="fas fa-tags"></i> 3.01 Attribute Sets
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="cert-database.php" data-page="cert-database">
                     <i class="fas fa-database"></i> 3.04 Models & Collections
