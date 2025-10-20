@@ -1,0 +1,3 @@
+# Deny access to visitor data directory
+Order Deny,Allow
+Deny from all

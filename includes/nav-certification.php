@@ -79,6 +79,16 @@
                     <i class="fas fa-link"></i> 1.11 URL Rewrites
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-1-12.php" data-page="cert-topic-1-12">
+                    <i class="fas fa-server"></i> 1.12 Caching System
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-1-13.php" data-page="cert-topic-1-13">
+                    <i class="fas fa-sitemap"></i> 1.13 Stores & Scope
+                </a>
+            </li>
         </ul>
 
         <!-- Domain 3: Database (24%) -->

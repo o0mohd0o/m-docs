@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magento 2 Database - Catalog</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<?php
+$pageTitle = 'Magento 2 Catalog Database Tables | Reference Guide';
+$pageType = 'database';
+include 'includes/head.php';
+?>
     <style>
         body { padding-top: 20px; padding-bottom: 40px; }
         .sidebar { position: fixed; top: 0; bottom: 0; left: -250px; width: 250px; z-index: 1000; padding: 20px 0; overflow-x: hidden; overflow-y: auto; background-color: #f8f9fa; transition: left 0.3s ease; border-right: 1px solid #dee2e6; }
@@ -200,7 +200,10 @@
         </div>
     </div>
 
+    <?php include 'includes/author-footer.php'; ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/visitor-counter.js"></script>
     <script src="js/nav-loader.js"></script>
     <script src="js/common.js"></script>
     <script>

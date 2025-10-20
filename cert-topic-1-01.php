@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1.01 Magento File Structure - AD0-E717</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="css/common.css" rel="stylesheet">
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true, theme: 'default' });
-    </script>
+<?php
+// Page configuration
+$pageTitle = '1.01 Magento File Structure | AD0-E717 Certification Lesson';
+$pageType = 'lesson';
+$includeMermaid = true;
+$seo = [
+    'title' => '1.01 Magento File Structure | AD0-E717 Certification Guide',
+    'description' => 'Learn Magento 2 file structure and directory organization for AD0-E717 certification. Comprehensive guide covering app, vendor, pub directories, module structure, and best practices for Adobe Commerce developers.',
+    'keywords' => 'Magento File Structure, Magento Directory Structure, AD0-E717, Magento 2 Architecture, Magento Module Structure, Adobe Commerce File System, Magento Developer Guide',
+    'type' => 'article',
+    'article' => true,
+    'course' => true,
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => '/index.php'],
+        ['name' => 'Certification', 'url' => '/cert-overview.php'],
+        ['name' => '1.01 File Structure', 'url' => '/cert-topic-1-01.php']
+    ]
+];
+
+// Include shared head
+include 'includes/head.php';
+?>
     <style>
         body { padding-top: 20px; padding-bottom: 40px; }
         .sidebar { position: fixed; top: 0; bottom: 0; left: -250px; width: 250px; z-index: 1000; padding: 20px 0; overflow-x: hidden; overflow-y: auto; background-color: #f8f9fa; transition: left 0.3s ease; border-right: 1px solid #dee2e6; }
@@ -69,7 +81,10 @@
         </div>
     </div>
 
+    <?php include 'includes/author-footer.php'; ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/visitor-counter.js"></script>
     <script src="js/nav-loader.js"></script>
     <script src="js/common.js"></script>
 </body>

@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Overview - Magento 2</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<?php
+$pageTitle = 'Magento 2 Database Overview | Complete Database Schema Reference Guide';
+$pageType = 'database';
+$seo = [
+    'title' => 'Magento 2 Database Overview | Complete Database Schema Reference',
+    'description' => 'Comprehensive Magento 2 database schema overview covering all major tables including sales, catalog, customer, EAV, inventory, and CMS. Essential reference for Magento developers and database administrators.',
+    'keywords' => 'Magento 2 Database, Magento Database Schema, Magento Tables, Magento Database Structure, Magento Database Reference, Magento EAV, Magento Sales Tables, Magento Catalog Tables',
+    'type' => 'article',
+    'article' => true,
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => '/index.php'],
+        ['name' => 'Database Overview', 'url' => '/database-overview.php']
+    ]
+];
+include 'includes/head.php';
+?>
     <style>
         :root { --primary: #0d6efd; }
         * { margin: 0; padding: 0; box-sizing: border-box; }

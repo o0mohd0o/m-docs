@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M-Docs - Magento 2 Documentation Hub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<?php
+// Page configuration
+$pageTitle = 'M-Docs - Magento 2 Documentation Hub | Comprehensive Developer Guide by Mohamed Tawfik';
+$pageType = 'default';
+$seo = [
+    'title' => 'M-Docs - Magento 2 Documentation Hub | Comprehensive Developer Guide',
+    'description' => 'Complete Magento 2 and Adobe Commerce documentation hub. Database references, AD0-E717 certification guides, tutorials, and practice quizzes. Learn Magento development with expert resources by Mohamed Tawfik.',
+    'keywords' => 'Magento 2, Adobe Commerce, Magento Development, Magento Certification, AD0-E717, Magento Database, Magento Tutorial, Magento Documentation, Magento Developer Guide, Magento 2 Training',
+    'type' => 'website',
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => '/index.php']
+    ]
+];
+
+// Include shared head
+include 'includes/head.php';
+?>
     <style>
         :root {
             --primary: #0d6efd;
@@ -634,7 +646,10 @@
         </div>
     </main>
 
+    <?php include 'includes/author-footer.php'; ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/visitor-counter.js"></script>
     <script>
         // Simple search functionality
         document.getElementById('searchInput').addEventListener('input', function(e) {

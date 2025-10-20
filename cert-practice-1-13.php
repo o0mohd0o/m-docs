@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php
-$pageTitle = 'Practice: 1.11 URL Rewrites | AD0-E717 Exam Prep';
+$pageTitle = 'Practice: 1.13 Stores and Scope | AD0-E717 Exam Prep';
 $pageType = 'quiz';
 include 'includes/head.php';
 ?>
@@ -20,15 +20,15 @@ include 'includes/head.php';
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
                 <div class="quiz-header">
-                    <div class="topic-badge">1.11</div>
-                    <h1><i class="fas fa-link"></i> URL Rewrites</h1>
-                    <p class="mb-0">20 Questions</p>
+                    <div class="topic-badge">1.13</div>
+                    <h1><i class="fas fa-sitemap"></i> Stores, Websites, and Store Views</h1>
+                    <p class="mb-0">26 Questions</p>
                 </div>
 
                 <div class="progress-container">
                     <div class="d-flex justify-content-between mb-2">
                         <span>Progress</span>
-                        <span id="progressText">0/20</span>
+                        <span id="progressText">0/26</span>
                     </div>
                     <div class="progress-bar-wrapper">
                         <div class="progress-bar-fill" id="progressBar"></div>
@@ -60,8 +60,8 @@ include 'includes/head.php';
                     <a href="cert-practice.php" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Back to Quiz Menu
                     </a>
-                    <a href="cert-topic-1-11.php" class="btn btn-outline-secondary">
-                        <i class="fas fa-book"></i> Study Topic 1.11
+                    <a href="cert-topic-1-13.php" class="btn btn-outline-secondary">
+                        <i class="fas fa-book"></i> Study Topic 1.13
                     </a>
                 </div>
             </main>
@@ -74,7 +74,7 @@ include 'includes/head.php';
     <script src="js/visitor-counter.js"></script>
     <script src="js/nav-loader.js"></script>
     <script src="js/common.js"></script>
-    <script src="includes/practice/1-11/questions.js"></script>
+    <script src="includes/practice/1-13/questions.js"></script>
     <script src="js/quiz-engine.js"></script>
-</body>
-</html>
+  </body>
+  </html>

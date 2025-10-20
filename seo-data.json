@@ -1,0 +1,334 @@
+{
+    "sales.php": {
+        "title": "Magento 2 Sales & Orders Database Tables | Complete Reference Guide",
+        "description": "Comprehensive reference for Magento 2 sales and orders database tables including sales_order, sales_invoice, sales_shipment, and sales_creditmemo. Essential guide for Magento developers working with order data.",
+        "keywords": "Magento Sales Tables, Magento Order Database, sales_order, Magento Invoice Tables, Magento Shipment Tables, Magento Database Reference",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/database-overview.php": "Database",
+            "\/sales.php": "Sales & Orders"
+        }
+    },
+    "catalog.php": {
+        "title": "Magento 2 Catalog Database Tables | Product & Category Schema Reference",
+        "description": "Complete guide to Magento 2 catalog database tables covering catalog_product, catalog_category, and EAV attribute tables. Essential reference for product and category data management.",
+        "keywords": "Magento Catalog Tables, Magento Product Database, catalog_product, catalog_category, Magento Category Tables, Product Attributes Magento",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/database-overview.php": "Database",
+            "\/catalog.php": "Catalog"
+        }
+    },
+    "customer.php": {
+        "title": "Magento 2 Customer Database Tables | Customer Entity Schema Guide",
+        "description": "Detailed reference for Magento 2 customer database tables including customer_entity, customer_address, and customer groups. Learn customer data structure and relationships.",
+        "keywords": "Magento Customer Tables, customer_entity, Magento Customer Database, Customer Address Tables, Magento Customer Groups",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/database-overview.php": "Database",
+            "\/customer.php": "Customer"
+        }
+    },
+    "eav.php": {
+        "title": "Magento 2 EAV Database Tables | Entity Attribute Value System Guide",
+        "description": "Comprehensive guide to Magento 2 EAV (Entity-Attribute-Value) database structure. Learn eav_entity, eav_attribute, and value tables for flexible data management.",
+        "keywords": "Magento EAV, Entity Attribute Value, eav_entity, eav_attribute, Magento Attribute System, Magento EAV Tables",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/database-overview.php": "Database",
+            "\/eav.php": "EAV System"
+        }
+    },
+    "inventory.php": {
+        "title": "Magento 2 Inventory Database Tables | MSI Stock Management Reference",
+        "description": "Complete reference for Magento 2 MSI (Multi-Source Inventory) database tables. Learn inventory sources, stock, and reservation tables for advanced inventory management.",
+        "keywords": "Magento Inventory Tables, Magento MSI, Multi-Source Inventory, inventory_source, Magento Stock Tables, Inventory Management",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/database-overview.php": "Database",
+            "\/inventory.php": "Inventory"
+        }
+    },
+    "cms.php": {
+        "title": "Magento 2 CMS Database Tables | Content Management System Reference",
+        "description": "Detailed guide to Magento 2 CMS database tables including cms_page, cms_block, and URL rewrites. Essential for content management and page development.",
+        "keywords": "Magento CMS Tables, cms_page, cms_block, Magento Content Management, URL Rewrites Magento, Magento Pages",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/database-overview.php": "Database",
+            "\/cms.php": "CMS & Content"
+        }
+    },
+    "cert-practice.php": {
+        "title": "AD0-E717 Practice Quizzes | Magento Certification Exam Preparation",
+        "description": "Comprehensive practice quizzes for Adobe Commerce Developer Professional (AD0-E717) certification. Test your knowledge with topic-specific questions and detailed explanations.",
+        "keywords": "AD0-E717 Practice, Magento Certification Practice, Magento Exam Questions, Adobe Commerce Practice Test, Magento Quiz",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice Quizzes"
+        }
+    },
+    "cert-ui.php": {
+        "title": "Magento UI & Frontend Development Guide | AD0-E717 Certification",
+        "description": "Master Magento 2 UI components, frontend development, and theme customization for AD0-E717 certification. Learn layouts, templates, and UI development best practices.",
+        "keywords": "Magento UI Components, Magento Frontend Development, Magento Themes, UI Components Magento 2, Magento Layout XML",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-ui.php": "UI Development"
+        }
+    },
+    "cert-topic-1-02.php": {
+        "title": "1.1-02 Module Structure | AD0-E717 Magento Certification Lesson",
+        "description": "Learn Magento 2 module structure, registration, and component architecture for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Module Structure, Magento 2 Module Structure, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-02.php": "1.1-02 Module Structure"
+        }
+    },
+    "cert-practice-1-02.php": {
+        "title": "Practice Quiz: 1.1-02 Module Structure | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Module Structure with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Module Structure Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-02.php": "Module Structure Quiz"
+        }
+    },
+    "cert-topic-1-03.php": {
+        "title": "1.1-03 di.xml Usage | AD0-E717 Magento Certification Lesson",
+        "description": "Master Magento dependency injection and di.xml configuration for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento di.xml Usage, Magento 2 di.xml Usage, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-03.php": "1.1-03 di.xml Usage"
+        }
+    },
+    "cert-practice-1-03.php": {
+        "title": "Practice Quiz: 1.1-03 di.xml Usage | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of di.xml Usage with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, di.xml Usage Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-03.php": "di.xml Usage Quiz"
+        }
+    },
+    "cert-topic-1-04.php": {
+        "title": "1.1-04 Plugins & Observers | AD0-E717 Magento Certification Lesson",
+        "description": "Learn Magento plugins, preferences, and event observers for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Plugins & Observers, Magento 2 Plugins & Observers, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-04.php": "1.1-04 Plugins & Observers"
+        }
+    },
+    "cert-practice-1-04.php": {
+        "title": "Practice Quiz: 1.1-04 Plugins & Observers | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Plugins & Observers with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Plugins & Observers Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-04.php": "Plugins & Observers Quiz"
+        }
+    },
+    "cert-topic-1-05.php": {
+        "title": "1.1-05 Create Controllers | AD0-E717 Magento Certification Lesson",
+        "description": "Build Magento controllers, actions, and routing for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Create Controllers, Magento 2 Create Controllers, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-05.php": "1.1-05 Create Controllers"
+        }
+    },
+    "cert-practice-1-05.php": {
+        "title": "Practice Quiz: 1.1-05 Create Controllers | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Create Controllers with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Create Controllers Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-05.php": "Create Controllers Quiz"
+        }
+    },
+    "cert-topic-1-06.php": {
+        "title": "1.1-06 CLI Commands | AD0-E717 Magento Certification Lesson",
+        "description": "Create custom Magento CLI commands and console tools for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento CLI Commands, Magento 2 CLI Commands, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-06.php": "1.1-06 CLI Commands"
+        }
+    },
+    "cert-practice-1-06.php": {
+        "title": "Practice Quiz: 1.1-06 CLI Commands | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of CLI Commands with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, CLI Commands Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-06.php": "CLI Commands Quiz"
+        }
+    },
+    "cert-topic-1-07.php": {
+        "title": "1.1-07 Index Functionality | AD0-E717 Magento Certification Lesson",
+        "description": "Understand Magento indexing system and index management for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Index Functionality, Magento 2 Index Functionality, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-07.php": "1.1-07 Index Functionality"
+        }
+    },
+    "cert-practice-1-07.php": {
+        "title": "Practice Quiz: 1.1-07 Index Functionality | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Index Functionality with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Index Functionality Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-07.php": "Index Functionality Quiz"
+        }
+    },
+    "cert-topic-1-08.php": {
+        "title": "1.1-08 Localization | AD0-E717 Magento Certification Lesson",
+        "description": "Implement Magento internationalization and translations for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Localization, Magento 2 Localization, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-08.php": "1.1-08 Localization"
+        }
+    },
+    "cert-practice-1-08.php": {
+        "title": "Practice Quiz: 1.1-08 Localization | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Localization with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Localization Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-08.php": "Localization Quiz"
+        }
+    },
+    "cert-topic-1-09.php": {
+        "title": "1.1-09 Cron Functionality | AD0-E717 Magento Certification Lesson",
+        "description": "Configure Magento cron jobs and scheduled tasks for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Cron Functionality, Magento 2 Cron Functionality, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-09.php": "1.1-09 Cron Functionality"
+        }
+    },
+    "cert-practice-1-09.php": {
+        "title": "Practice Quiz: 1.1-09 Cron Functionality | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Cron Functionality with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Cron Functionality Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-09.php": "Cron Functionality Quiz"
+        }
+    },
+    "cert-topic-1-10.php": {
+        "title": "1.1-10 Custom Module Routes | AD0-E717 Magento Certification Lesson",
+        "description": "Create custom routes and URL structures in Magento for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Custom Module Routes, Magento 2 Custom Module Routes, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-10.php": "1.1-10 Custom Module Routes"
+        }
+    },
+    "cert-practice-1-10.php": {
+        "title": "Practice Quiz: 1.1-10 Custom Module Routes | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Custom Module Routes with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Custom Module Routes Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-10.php": "Custom Module Routes Quiz"
+        }
+    },
+    "cert-topic-1-11.php": {
+        "title": "1.1-11 URL Rewrites | AD0-E717 Magento Certification Lesson",
+        "description": "Master Magento URL rewrite system and SEO-friendly URLs for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento URL Rewrites, Magento 2 URL Rewrites, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-11.php": "1.1-11 URL Rewrites"
+        }
+    },
+    "cert-practice-1-11.php": {
+        "title": "Practice Quiz: 1.1-11 URL Rewrites | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of URL Rewrites with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, URL Rewrites Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-11.php": "URL Rewrites Quiz"
+        }
+    },
+    "cert-topic-1-12.php": {
+        "title": "1.1-12 Caching System | AD0-E717 Magento Certification Lesson",
+        "description": "Optimize performance with Magento caching strategies for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Caching System, Magento 2 Caching System, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-12.php": "1.1-12 Caching System"
+        }
+    },
+    "cert-practice-1-12.php": {
+        "title": "Practice Quiz: 1.1-12 Caching System | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Caching System with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Caching System Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-12.php": "Caching System Quiz"
+        }
+    },
+    "cert-topic-1-13.php": {
+        "title": "1.1-13 Stores & Websites | AD0-E717 Magento Certification Lesson",
+        "description": "Configure multi-store, multi-website Magento setups for Adobe Commerce Developer Professional (AD0-E717) certification. Comprehensive tutorial with examples and best practices.",
+        "keywords": "AD0-E717, Magento Stores & Websites, Magento 2 Stores & Websites, Adobe Commerce, Magento Certification, Magento Tutorial",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-topic-1-13.php": "1.1-13 Stores & Websites"
+        }
+    },
+    "cert-practice-1-13.php": {
+        "title": "Practice Quiz: 1.1-13 Stores & Websites | AD0-E717 Exam Preparation",
+        "description": "Test your knowledge of Stores & Websites with this AD0-E717 practice quiz. Multiple choice questions with detailed explanations to prepare for Adobe Commerce certification.",
+        "keywords": "AD0-E717 Practice, Magento Quiz, Stores & Websites Quiz, Magento Certification Practice",
+        "breadcrumbs": {
+            "\/index.php": "Home",
+            "\/cert-overview.php": "Certification",
+            "\/cert-practice.php": "Practice",
+            "\/cert-practice-1-13.php": "Stores & Websites Quiz"
+        }
+    }
+}

@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adobe Commerce Developer (AD0-E717) Study Guide</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<?php
+$pageTitle = 'Magento AD0-E717 Certification Guide | Adobe Commerce Developer Professional Study Resources';
+$pageType = 'lesson';
+$seo = [
+    'title' => 'Magento AD0-E717 Certification Guide | Adobe Commerce Developer Professional',
+    'description' => 'Complete Adobe Commerce Developer Professional (AD0-E717) certification study guide with comprehensive lessons, practice quizzes, and exam preparation resources. Master Magento 2 development for certification success.',
+    'keywords' => 'AD0-E717, Magento Certification, Adobe Commerce Certification, Magento Developer Certification, Adobe Commerce Developer Professional, Magento 2 Certification Exam, Magento Study Guide',
+    'type' => 'website',
+    'course' => true,
+    'breadcrumbs' => [
+        ['name' => 'Home', 'url' => '/index.php'],
+        ['name' => 'Certification Overview', 'url' => '/cert-overview.php']
+    ]
+];
+include 'includes/head.php';
+?>
     <style>
         :root {
             --primary: #0d6efd;
@@ -544,6 +555,9 @@
         </div>
     </main>
 
+    <?php include 'includes/author-footer.php'; ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/visitor-counter.js"></script>
 </body>
 </html>

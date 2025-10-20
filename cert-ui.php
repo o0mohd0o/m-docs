@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UI & Frontend Development - AD0-E717</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="css/common.css" rel="stylesheet" />
+<?php
+$pageTitle = 'UI & Frontend Development - AD0-E717';
+$pageType = 'lesson';
+include 'includes/head.php';
+?>
   <style>
     .section-card { background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; padding: 24px; }
     .section-title { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
@@ -82,7 +81,10 @@
     </div>
   </div>
 
+  <?php include 'includes/author-footer.php'; ?>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/visitor-counter.js"></script>
   <script src="js/nav-loader.js"></script>
   <script src="js/common.js"></script>
 </body>

@@ -1,0 +1,17 @@
+{
+    "total": 2,
+    "pages": {
+        "cert-topic-1-02": {
+            "count": 1,
+            "last_visit": "2025-10-20 06:44:03"
+        },
+        "cert-topic-1-03": {
+            "count": 1,
+            "last_visit": "2025-10-20 06:44:07"
+        }
+    },
+    "sessions": {
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-02": 1760942643,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-03": 1760942647
+    }
+}

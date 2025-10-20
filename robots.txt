@@ -1,0 +1,32 @@
+# robots.txt for M-Docs Magento Documentation
+# Author: Mohamed Tawfik
+# Updated: October 20, 2025
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://m-docs.bonlineco.com/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow access to certain directories
+Disallow: /includes/
+Disallow: /.git/
+Disallow: /vendor/
+
+# Allow CSS and JS for better rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Crawl-delay for politeness
+Crawl-delay: 1

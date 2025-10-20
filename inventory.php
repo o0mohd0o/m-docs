@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magento 2 Database - Inventory</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<?php
+$pageTitle = 'Magento 2 Inventory (MSI) Database Tables | Reference Guide';
+$pageType = 'database';
+include 'includes/head.php';
+?>
     <style>
         body { padding-top: 20px; padding-bottom: 40px; }
         .sidebar { position: fixed; top: 0; bottom: 0; left: -250px; width: 250px; z-index: 1000; padding: 20px 0; overflow-x: hidden; overflow-y: auto; background-color: #f8f9fa; transition: left 0.3s ease; border-right: 1px solid #dee2e6; }
         .sidebar.show { left: 0; }
         .sidebar-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999; display: none; }
-        .sidebar-overlay.show { display: block; }
         .main-content { margin-left: 0; padding: 20px 15px; }
         .mobile-menu-toggle { position: fixed; top: 20px; left: 20px; z-index: 1001; background: #0d6efd; color: white; border: none; border-radius: 4px; padding: 8px 12px; cursor: pointer; transition: background-color 0.3s ease; }
         .mobile-menu-toggle:hover { background: #0b5ed7; }
@@ -95,7 +94,11 @@
             </main>
         </div>
     </div>
+
+    <?php include 'includes/author-footer.php'; ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/visitor-counter.js"></script>
     <script src="js/nav-loader.js"></script>
     <script src="js/common.js"></script>
     <script>
