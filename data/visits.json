@@ -1,5 +1,5 @@
 {
-    "total": 2,
+    "total": 13,
     "pages": {
         "cert-topic-1-02": {
             "count": 1,
@@ -8,10 +8,57 @@
         "cert-topic-1-03": {
             "count": 1,
             "last_visit": "2025-10-20 06:44:07"
+        },
+        "index": {
+            "count": 2,
+            "last_visit": "2025-10-20 07:00:58"
+        },
+        "eav": {
+            "count": 1,
+            "last_visit": "2025-10-20 06:50:58"
+        },
+        "catalog": {
+            "count": 1,
+            "last_visit": "2025-10-20 06:51:01"
+        },
+        "cert-topic-1-13": {
+            "count": 1,
+            "last_visit": "2025-10-20 06:51:27"
+        },
+        "cert-overview": {
+            "count": 2,
+            "last_visit": "2025-10-20 07:00:01"
+        },
+        "cert-topic-1-01": {
+            "count": 1,
+            "last_visit": "2025-10-20 06:51:46"
+        },
+        "sales": {
+            "count": 1,
+            "last_visit": "2025-10-20 06:51:52"
+        },
+        "cert-practice": {
+            "count": 1,
+            "last_visit": "2025-10-20 07:00:58"
+        },
+        "cert-practice-1-08": {
+            "count": 1,
+            "last_visit": "2025-10-20 07:06:07"
         }
     },
     "sessions": {
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-02": 1760942643,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-03": 1760942647
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-03": 1760942647,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_index": 1760942896,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_eav": 1760943058,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_catalog": 1760943061,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-13": 1760943087,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-overview": 1760943101,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-01": 1760943106,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_sales": 1760943112,
+        "faf549345c60661f4dfdd122da861b6d_cert-overview": 1760943601,
+        "faf549345c60661f4dfdd122da861b6d_cert-practice": 1760943658,
+        "faf549345c60661f4dfdd122da861b6d_index": 1760943658,
+        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-08": 1760943967
     }
 }

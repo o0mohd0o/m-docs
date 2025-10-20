@@ -200,26 +200,8 @@ include 'includes/head.php';
         </div>
     </main>
 
-    <script>
-        // Simple search functionality
-        document.addEventListener('DOMContentLoaded', function(){
-            const input = document.getElementById('searchInput');
-            if(!input) return;
-            input.addEventListener('input', function(e) {
-                const query = e.target.value.toLowerCase();
-                if (query.length < 2) return;
-                const sections = document.querySelectorAll('.content-section, .module-card');
-                sections.forEach(section => {
-                    const text = section.textContent.toLowerCase();
-                    section.style.display = text.includes(query) ? '' : 'none';
-                });
-            });
-            input.addEventListener('blur', function(){
-                if (this.value === '') {
-                    document.querySelectorAll('.content-section, .module-card').forEach(el => el.style.display = '');
-                }
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/visitor-counter.js"></script>
+    <script src="js/global-search.js"></script>
 </body>
 </html>
