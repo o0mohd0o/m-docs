@@ -117,6 +117,26 @@ include 'includes/head.php';
             <div class="practice-title">Attribute Sets</div>
             <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
           </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-3-02.php">
+            <span class="topic-badge">3.02</span>
+            <div class="practice-title">Types of Attributes</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-3-03.php">
+            <span class="topic-badge">3.03</span>
+            <div class="practice-title">DB Schema</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-3-04.php">
+            <span class="topic-badge">3.04</span>
+            <div class="practice-title">Models & Collections</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-3-05.php">
+            <span class="topic-badge">3.05</span>
+            <div class="practice-title">EAV Basics</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
         </div>
 
         <div class="mt-4">

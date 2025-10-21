@@ -1,65 +1,65 @@
 {
-    "total": 214,
+    "total": 332,
     "pages": {
         "cert-topic-1-02": {
-            "count": 5,
-            "last_visit": "2025-10-20 12:03:17"
+            "count": 7,
+            "last_visit": "2025-10-21 04:53:22"
         },
         "cert-topic-1-03": {
-            "count": 7,
-            "last_visit": "2025-10-20 15:53:23"
+            "count": 10,
+            "last_visit": "2025-10-21 04:18:23"
         },
         "index": {
-            "count": 17,
-            "last_visit": "2025-10-20 16:16:41"
+            "count": 29,
+            "last_visit": "2025-10-21 12:58:00"
         },
         "eav": {
             "count": 4,
             "last_visit": "2025-10-20 13:48:57"
         },
         "catalog": {
-            "count": 6,
-            "last_visit": "2025-10-20 15:12:43"
+            "count": 7,
+            "last_visit": "2025-10-21 04:19:45"
         },
         "cert-topic-1-13": {
             "count": 2,
             "last_visit": "2025-10-20 11:40:47"
         },
         "cert-overview": {
-            "count": 40,
-            "last_visit": "2025-10-20 17:17:07"
+            "count": 78,
+            "last_visit": "2025-10-21 13:23:53"
         },
         "cert-topic-1-01": {
-            "count": 13,
-            "last_visit": "2025-10-20 16:33:20"
+            "count": 24,
+            "last_visit": "2025-10-21 12:06:59"
         },
         "sales": {
-            "count": 7,
-            "last_visit": "2025-10-20 15:04:43"
+            "count": 10,
+            "last_visit": "2025-10-21 12:03:07"
         },
         "cert-practice": {
-            "count": 12,
-            "last_visit": "2025-10-20 16:46:39"
+            "count": 24,
+            "last_visit": "2025-10-21 12:26:21"
         },
         "cert-practice-1-08": {
-            "count": 1,
-            "last_visit": "2025-10-20 07:06:07"
+            "count": 2,
+            "last_visit": "2025-10-20 18:25:26"
         },
         "cert-topic-2-01": {
-            "count": 4,
-            "last_visit": "2025-10-20 16:37:27"
+            "count": 5,
+            "last_visit": "2025-10-20 21:10:07"
         },
         "cert-practice-2-01": {
             "count": 4,
             "last_visit": "2025-10-20 11:25:21"
         },
         "database-overview": {
-            "count": 7,
-            "last_visit": "2025-10-20 14:54:24"
+            "count": 9,
+            "last_visit": "2025-10-21 12:01:47"
         },
         "cert-topic-1-04": {
-            "count": 7,
-            "last_visit": "2025-10-20 16:17:38"
+            "count": 8,
+            "last_visit": "2025-10-20 18:11:02"
         },
         "cert-topic-1-10": {
             "count": 4,
@@ -82,8 +82,8 @@
             "last_visit": "2025-10-20 15:42:05"
         },
         "cert-practice-1-01": {
-            "count": 6,
-            "last_visit": "2025-10-20 15:41:58"
+            "count": 14,
+            "last_visit": "2025-10-21 12:29:49"
         },
         "cert-practice-1-06": {
             "count": 1,
@@ -110,8 +110,8 @@
             "last_visit": "2025-10-20 10:43:20"
         },
         "cert-practice-1-09": {
-            "count": 1,
-            "last_visit": "2025-10-20 10:01:21"
+            "count": 2,
+            "last_visit": "2025-10-20 22:09:24"
         },
         "inventory": {
             "count": 4,
@@ -166,153 +166,67 @@
             "last_visit": "2025-10-20 13:56:46"
         },
         "cert-ui": {
-            "count": 2,
-            "last_visit": "2025-10-20 15:39:02"
+            "count": 6,
+            "last_visit": "2025-10-21 10:22:30"
         },
         "cert-practice-1-03": {
             "count": 1,
             "last_visit": "2025-10-20 14:11:48"
         },
         "cert-topic-3-01": {
-            "count": 2,
-            "last_visit": "2025-10-20 17:37:20"
+            "count": 3,
+            "last_visit": "2025-10-21 07:03:31"
         },
         "cert-practice-3-01": {
+            "count": 2,
+            "last_visit": "2025-10-20 18:32:22"
+        },
+        "cert-topic-3-02": {
+            "count": 2,
+            "last_visit": "2025-10-21 06:27:36"
+        },
+        "cert-topic-3-03": {
+            "count": 3,
+            "last_visit": "2025-10-21 07:03:33"
+        },
+        "cert-practice-3-02": {
             "count": 1,
-            "last_visit": "2025-10-20 17:36:11"
+            "last_visit": "2025-10-20 18:33:34"
+        },
+        "cert-topic-3-04": {
+            "count": 4,
+            "last_visit": "2025-10-21 10:22:27"
+        },
+        "cert-topic-3-05": {
+            "count": 3,
+            "last_visit": "2025-10-21 10:24:11"
+        },
+        "cert-practice-3-03": {
+            "count": 1,
+            "last_visit": "2025-10-21 06:59:26"
+        },
+        "cert-practice-3-04": {
+            "count": 1,
+            "last_visit": "2025-10-21 07:50:24"
+        },
+        "cert-practice-3-05": {
+            "count": 1,
+            "last_visit": "2025-10-21 10:22:37"
         }
     },
     "sessions": {
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-02": 1760942643,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-03": 1760944626,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_index": 1760942896,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_eav": 1760943058,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_catalog": 1760943061,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-13": 1760943087,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-overview": 1760968449,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-01": 1760943106,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_sales": 1760943112,
-        "faf549345c60661f4dfdd122da861b6d_cert-overview": 1760943601,
-        "faf549345c60661f4dfdd122da861b6d_cert-practice": 1760943658,
-        "faf549345c60661f4dfdd122da861b6d_index": 1760943658,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-08": 1760943967,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-2-01": 1760951836,
-        "2f266469206d4eec01fe3721dff2d0a0_index": 1760944922,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-01": 1760945078,
-        "3bae0d4bd29bbf0ffcf6f349f9d3f823_index": 1760945427,
-        "3bae0d4bd29bbf0ffcf6f349f9d3f823_cert-overview": 1760945441,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice": 1760978799,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-2-01": 1760958702,
-        "5f494af315e0011420aefaffc7225fc4_database-overview": 1760946333,
-        "c57d9646d6de32c56be1710006165729_cert-overview": 1760946348,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-04": 1760961825,
-        "d61df6e0d784b15fb0404baadc4308c5_cert-topic-1-10": 1760947365,
-        "4645ea9296a8ba490853e448abc87672_cert-overview": 1760947541,
-        "4645ea9296a8ba490853e448abc87672_index": 1760947593,
-        "e54f882d4f28a817cfdbb02bb7dc0efc_cert-overview": 1760947605,
-        "e54f882d4f28a817cfdbb02bb7dc0efc_cert-topic-1-01": 1760947615,
-        "e54f882d4f28a817cfdbb02bb7dc0efc_cert-practice": 1760947630,
-        "e54f882d4f28a817cfdbb02bb7dc0efc_cert-practice-1-02": 1760947632,
-        "400af181f3275ae912f9fa29b8bc48bf_index": 1760948071,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-04": 1760948235,
-        "d61df6e0d784b15fb0404baadc4308c5_index": 1760948293,
-        "7c50df00881909f8b21ccad98ef5d980_index": 1760948393,
-        "af35cac4720a077d4c40235a0a9fa6c8_index": 1760948393,
-        "5f494af315e0011420aefaffc7225fc4_cert-topic-1-07": 1760949291,
-        "e37f893adaf12475e340d68fa0db4690_cert-overview": 1760976460,
-        "e37f893adaf12475e340d68fa0db4690_cert-topic-1-01": 1760949433,
-        "e37f893adaf12475e340d68fa0db4690_cert-topic-1-04": 1760949568,
-        "acc5cd6fc216ab193387cac88cf72d48_cert-overview": 1760949649,
-        "acc5cd6fc216ab193387cac88cf72d48_cert-topic-1-01": 1760949677,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-overview": 1761033018,
+        "3bae0d4bd29bbf0ffcf6f349f9d3f823_index": 1761028828,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice": 1761042154,
+        "e37f893adaf12475e340d68fa0db4690_cert-overview": 1761051350,
         "d61df6e0d784b15fb0404baadc4308c5_sales": 1760966806,
-        "b7d786dfd9e9a4ad52f7b38489cb220a_index": 1760950570,
-        "b7d786dfd9e9a4ad52f7b38489cb220a_customer": 1760950582,
-        "432d1035652f88f69c4c9ed3f2293019_cert-overview": 1760950716,
-        "432d1035652f88f69c4c9ed3f2293019_cert-practice": 1760950771,
-        "432d1035652f88f69c4c9ed3f2293019_cert-practice-1-01": 1760950776,
         "f2db753b63a570cabca4f17550b613ec_cert-overview": 1760969028,
-        "f2db753b63a570cabca4f17550b613ec_cert-topic-1-01": 1760951250,
-        "f2db753b63a570cabca4f17550b613ec_cert-topic-1-07": 1760951268,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-practice-1-06": 1760951323,
-        "5f494af315e0011420aefaffc7225fc4_cms": 1760951375,
-        "af35cac4720a077d4c40235a0a9fa6c8_catalog": 1760960503,
-        "d61df6e0d784b15fb0404baadc4308c5_cert-practice-1-11": 1760951497,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-2-02": 1760964782,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-practice-1-07": 1760951927,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-02": 1760951929,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-overview": 1760952435,
-        "5f494af315e0011420aefaffc7225fc4_cert-overview": 1760953388,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice": 1760953622,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-13": 1760957000,
-        "79bbb53210e1657c9927219f3a13c5c3_cert-overview": 1760953900,
-        "79bbb53210e1657c9927219f3a13c5c3_index": 1760953906,
-        "af35cac4720a077d4c40235a0a9fa6c8_database-overview": 1760954233,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-practice-1-09": 1760954481,
-        "af35cac4720a077d4c40235a0a9fa6c8_inventory": 1760961159,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-practice-1-10": 1760954572,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-12": 1760955172,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-01": 1760955880,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-practice-2-02": 1760955885,
-        "af35cac4720a077d4c40235a0a9fa6c8_eav": 1760956400,
-        "d61df6e0d784b15fb0404baadc4308c5_cert-practice-2-01": 1760956702,
-        "d61df6e0d784b15fb0404baadc4308c5_cert-practice-1-01": 1760957783,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-10": 1760957814,
-        "16d28a4cbed5918037048d0507cde0cd_cert-overview": 1760958007,
-        "5f494af315e0011420aefaffc7225fc4_cert-topic-1-11": 1760958204,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-11": 1760958235,
-        "5f494af315e0011420aefaffc7225fc4_cert-topic-2-01": 1760958304,
-        "f2db753b63a570cabca4f17550b613ec_cert-topic-1-10": 1760958572,
         "f2db753b63a570cabca4f17550b613ec_cert-topic-1-12": 1760969018,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-02": 1760959093,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-2-01": 1760959521,
-        "d61df6e0d784b15fb0404baadc4308c5_cert-topic-1-12": 1760960402,
-        "5f494af315e0011420aefaffc7225fc4_cert-topic-1-09": 1760960413,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-13": 1760960447,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-06": 1760961042,
-        "b1f41ecff9f3016e02a138142ba32ebb_cert-overview": 1760961368,
-        "b1f41ecff9f3016e02a138142ba32ebb_cert-topic-1-01": 1760961402,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-08": 1760961410,
-        "03873fc8b8e0579e4939c4b251d5a7ad_cert-overview": 1760961499,
-        "03873fc8b8e0579e4939c4b251d5a7ad_cert-topic-1-01": 1760961611,
-        "71b8a97919a2771a6b882fa5a4d4ecc8_cert-overview": 1760961712,
-        "71b8a97919a2771a6b882fa5a4d4ecc8_cert-topic-1-01": 1760961732,
-        "71b8a97919a2771a6b882fa5a4d4ecc8_cert-topic-1-02": 1760961795,
-        "6379d08c1372e1a3dad65814172b3b02_cert-topic-1-02": 1760961797,
-        "d61df6e0d784b15fb0404baadc4308c5_cert-topic-1-02": 1760961797,
-        "71b8a97919a2771a6b882fa5a4d4ecc8_cert-topic-1-03": 1760961811,
-        "5f494af315e0011420aefaffc7225fc4_cert-topic-1-03": 1760961813,
-        "dd20991e72d995896f3e167c3e236d0d_cert-topic-1-03": 1760961814,
-        "71b8a97919a2771a6b882fa5a4d4ecc8_cert-topic-1-04": 1760961823,
-        "dd20991e72d995896f3e167c3e236d0d_cert-topic-1-04": 1760961824,
-        "71b8a97919a2771a6b882fa5a4d4ecc8_cert-practice": 1760961895,
         "71b8a97919a2771a6b882fa5a4d4ecc8_cert-practice-1-01": 1760969728,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-2-02": 1760962315,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-05": 1760962534,
-        "36a101124fb9949519a8bc9822a4d74c_cert-overview": 1760966436,
-        "36a101124fb9949519a8bc9822a4d74c_cert-practice": 1760963963,
-        "36a101124fb9949519a8bc9822a4d74c_cert-practice-1-02": 1760963969,
-        "6d1eb5c57ee98c502a04437d423f51a1_cert-overview": 1760964731,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-2-03": 1760981835,
-        "b00db19e6960a6ae1bea26f30368f312_cert-overview": 1760965096,
-        "18aaf3b5a9654ca41e816ff5d7492854_cert-overview": 1760965119,
-        "18aaf3b5a9654ca41e816ff5d7492854_database-overview": 1760965127,
-        "18aaf3b5a9654ca41e816ff5d7492854_index": 1760965136,
-        "b035eba231278c4e48fa63baae57de0c_cert-overview": 1760965172,
-        "b035eba231278c4e48fa63baae57de0c_cert-practice": 1760965203,
-        "b035eba231278c4e48fa63baae57de0c_index": 1760965203,
-        "36a101124fb9949519a8bc9822a4d74c_index": 1760965487,
         "36a101124fb9949519a8bc9822a4d74c_database-overview": 1760972064,
         "36a101124fb9949519a8bc9822a4d74c_sales": 1760972683,
         "36a101124fb9949519a8bc9822a4d74c_catalog": 1760973163,
-        "36a101124fb9949519a8bc9822a4d74c_customer": 1760965587,
-        "36a101124fb9949519a8bc9822a4d74c_eav": 1760965598,
-        "36a101124fb9949519a8bc9822a4d74c_inventory": 1760965609,
-        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-05": 1760965907,
-        "5f494af315e0011420aefaffc7225fc4_cert-practice-2-02": 1760966016,
-        "33d79e5fc99a3c6c5921cf1b2761c458_cert-overview": 1760966094,
-        "33d79e5fc99a3c6c5921cf1b2761c458_database-overview": 1760966124,
-        "33d79e5fc99a3c6c5921cf1b2761c458_sales": 1760966135,
-        "d61df6e0d784b15fb0404baadc4308c5_cert-topic-2-02": 1760966446,
         "4d438dad5b1d61bca56f5ccb80a3afa8_index": 1760968110,
         "4d438dad5b1d61bca56f5ccb80a3afa8_sales": 1760968125,
         "4d438dad5b1d61bca56f5ccb80a3afa8_database-overview": 1760968128,
@@ -357,7 +271,7 @@
         "5ebdb7536d1999411b48704e47e11762_index": 1760977001,
         "5ebdb7536d1999411b48704e47e11762_cert-overview": 1760977029,
         "5ebdb7536d1999411b48704e47e11762_cert-topic-1-01": 1760977049,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-01": 1760981840,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-01": 1761030211,
         "5ebdb7536d1999411b48704e47e11762_cert-topic-1-04": 1760977058,
         "5ebdb7536d1999411b48704e47e11762_cert-topic-1-07": 1760981187,
         "5ebdb7536d1999411b48704e47e11762_cert-topic-1-08": 1760977098,
@@ -368,6 +282,105 @@
         "0295ba24744a42a644e8788b7ca43319_cert-overview": 1760978766,
         "607363b1a52ef8b4066c4a73eecee000_cert-overview": 1760979128,
         "89ed0b597bc4a86737cb16c74c7ab40c_cert-overview": 1760980627,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-3-01": 1760981771
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-3-01": 1760985142,
+        "44a55bf3c60db08ed9d786a2e76dc35d_cert-overview": 1760982764,
+        "44a55bf3c60db08ed9d786a2e76dc35d_cert-topic-1-03": 1760982772,
+        "2288a757e578ac7898f179ef0afad93b_cert-overview": 1760983663,
+        "2288a757e578ac7898f179ef0afad93b_cert-practice": 1760983674,
+        "2288a757e578ac7898f179ef0afad93b_cert-practice-1-01": 1760983785,
+        "3f0426a6785a623da92f353eef003139_cert-overview": 1760983839,
+        "3f0426a6785a623da92f353eef003139_cert-topic-1-01": 1760983847,
+        "3f0426a6785a623da92f353eef003139_database-overview": 1760983860,
+        "3f0426a6785a623da92f353eef003139_cert-topic-1-04": 1760983862,
+        "2288a757e578ac7898f179ef0afad93b_index": 1760983972,
+        "7da1d324c628fc654b9b4ede91205261_cert-overview": 1760984048,
+        "7da1d324c628fc654b9b4ede91205261_cert-ui": 1760984085,
+        "7da1d324c628fc654b9b4ede91205261_cert-topic-1-03": 1760984088,
+        "7bc240109c33d219e1b952f256902a15_cert-overview": 1760984155,
+        "365e215101a38f15597fa6593601aa21_cert-overview": 1760984221,
+        "f4480d359c83fc8b6cb9414c54d64111_cert-overview": 1761037445,
+        "e736925a101f6d77241efd3aacba9ff9_cert-overview": 1760984412,
+        "e736925a101f6d77241efd3aacba9ff9_cert-practice": 1760984454,
+        "e736925a101f6d77241efd3aacba9ff9_cert-practice-1-01": 1760984456,
+        "e736925a101f6d77241efd3aacba9ff9_cert-ui": 1760984699,
+        "e736925a101f6d77241efd3aacba9ff9_cert-practice-1-08": 1760984726,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-02": 1761028056,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-03": 1761030213,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-3-02": 1760985214,
+        "de812f9ae17042bdd2b4308538461ba2_cert-overview": 1760985437,
+        "ce3d78a6fd49fa6ac5c2ea423ceb35b3_cert-overview": 1760985822,
+        "caa406cbd3e5d774c4f34c3feb211b13_cert-overview": 1760986355,
+        "c8d42f8eecab5597dc1dac6723658566_cert-overview": 1760989109,
+        "c8d42f8eecab5597dc1dac6723658566_cert-practice": 1760989121,
+        "c8d42f8eecab5597dc1dac6723658566_cert-practice-1-01": 1760989123,
+        "2f1057ce0193bb7ee111e3bfbc3edb4d_cert-overview": 1760990254,
+        "203f64949513c375e57c06d850d5211d_index": 1760990308,
+        "2f1057ce0193bb7ee111e3bfbc3edb4d_index": 1760990350,
+        "2f1057ce0193bb7ee111e3bfbc3edb4d_cert-topic-1-01": 1760990370,
+        "c8d42f8eecab5597dc1dac6723658566_cert-topic-1-01": 1760994596,
+        "c8d42f8eecab5597dc1dac6723658566_cert-topic-2-01": 1760994607,
+        "268985164948bb5b40c2f5672a00b155_cert-overview": 1760997927,
+        "268985164948bb5b40c2f5672a00b155_cert-practice": 1760997965,
+        "268985164948bb5b40c2f5672a00b155_cert-practice-1-01": 1760997989,
+        "d61df6e0d784b15fb0404baadc4308c5_cert-practice-1-09": 1760998164,
+        "b2bf2ee2c0e018818dc820ea6f995b96_cert-overview": 1760998678,
+        "cf41b3c64634150b9c924f828c877635_cert-overview": 1760998705,
+        "5b65c9f4595639fc390bbf36eb28f506_cert-overview": 1760998784,
+        "5b65c9f4595639fc390bbf36eb28f506_cert-practice": 1760998816,
+        "5b65c9f4595639fc390bbf36eb28f506_cert-practice-1-01": 1760998919,
+        "2eea8f914e577ae643c64eba88327b6c_cert-overview": 1761020277,
+        "2eea8f914e577ae643c64eba88327b6c_cert-topic-1-03": 1761020303,
+        "2eea8f914e577ae643c64eba88327b6c_index": 1761020352,
+        "2eea8f914e577ae643c64eba88327b6c_sales": 1761020358,
+        "2eea8f914e577ae643c64eba88327b6c_catalog": 1761020385,
+        "2eea8f914e577ae643c64eba88327b6c_cert-topic-1-01": 1761020486,
+        "2eea8f914e577ae643c64eba88327b6c_cert-topic-1-02": 1761020507,
+        "851656364265a9f53a37ff45a1275f38_cert-overview": 1761020862,
+        "851656364265a9f53a37ff45a1275f38_cert-topic-1-01": 1761020902,
+        "851656364265a9f53a37ff45a1275f38_index": 1761020918,
+        "80acbad0358de754b8948945ab561bad_cert-overview": 1761021324,
+        "1a8accf03a29f211b1eabfe4c84aa031_cert-overview": 1761022381,
+        "1a8accf03a29f211b1eabfe4c84aa031_cert-topic-1-01": 1761022393,
+        "1a8accf03a29f211b1eabfe4c84aa031_cert-topic-1-02": 1761022402,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-04": 1761042147,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-05": 1761042251,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-3-03": 1761029966,
+        "1feb432e66395403d3ea58d344681e1f_cert-overview": 1761030724,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-3-04": 1761033024,
+        "ec6437c90fb2813545d5c81b6a1ef38e_index": 1761033607,
+        "d6b85b367c2631ff24768b7665b3585b_cert-overview": 1761036601,
+        "d6b85b367c2631ff24768b7665b3585b_cert-ui": 1761036611,
+        "d6b85b367c2631ff24768b7665b3585b_cert-topic-1-01": 1761036615,
+        "d6b85b367c2631ff24768b7665b3585b_index": 1761036625,
+        "d6b85b367c2631ff24768b7665b3585b_sales": 1761036632,
+        "ddfd1018a3b639cfbfd6e519eec1dafd_cert-overview": 1761038423,
+        "ddfd1018a3b639cfbfd6e519eec1dafd_cert-topic-1-01": 1761038449,
+        "cb7c96de2ef814e70e05b8173de32bdc_cert-overview": 1761053033,
+        "cb7c96de2ef814e70e05b8173de32bdc_cert-practice": 1761038476,
+        "cb7c96de2ef814e70e05b8173de32bdc_cert-practice-1-01": 1761038477,
+        "cb7c96de2ef814e70e05b8173de32bdc_index": 1761038499,
+        "15b1b1ad7221d369d33dd5360d557c46_cert-overview": 1761041203,
+        "15b1b1ad7221d369d33dd5360d557c46_cert-topic-1-01": 1761041242,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-ui": 1761042150,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-3-05": 1761042157,
+        "caf01f783200152328e500231ad60e1c_cert-overview": 1761045154,
+        "ac637fee2576727776177fb81e703e76_cert-overview": 1761045505,
+        "ac637fee2576727776177fb81e703e76_cert-topic-1-01": 1761045517,
+        "ac637fee2576727776177fb81e703e76_cert-practice": 1761045645,
+        "61108dfca84f0a7358634a575ab9532e_cert-overview": 1761048079,
+        "61108dfca84f0a7358634a575ab9532e_index": 1761048094,
+        "61108dfca84f0a7358634a575ab9532e_database-overview": 1761048107,
+        "61108dfca84f0a7358634a575ab9532e_sales": 1761048187,
+        "b0fd15b6bc1cd926258a79caedc36d07_cert-overview": 1761048343,
+        "b0fd15b6bc1cd926258a79caedc36d07_cert-topic-1-01": 1761048419,
+        "78e9955a519c383356773fe60d685e92_cert-overview": 1761049521,
+        "78e9955a519c383356773fe60d685e92_cert-practice": 1761049581,
+        "78e9955a519c383356773fe60d685e92_cert-practice-1-01": 1761049596,
+        "3f7b167bfc9ebeba695751268ce2bbb0_cert-practice-1-01": 1761049789,
+        "e34fe650a9fe46835338c534bdea2b7a_cert-overview": 1761050017,
+        "b84ba3d2803041cbaaae8ec6e98e9b6e_cert-overview": 1761051122,
+        "79a35dff05b19c5b09bc2a27fa8fc15b_cert-overview": 1761051299,
+        "79a35dff05b19c5b09bc2a27fa8fc15b_index": 1761051309,
+        "37a56a66789e1939ddab99d7ac1b3488_index": 1761051480
     }
 }

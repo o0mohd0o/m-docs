@@ -120,8 +120,23 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cert-database.php" data-page="cert-database">
+                <a class="nav-link" href="cert-topic-3-02.php" data-page="cert-topic-3-02">
+                    <i class="fas fa-layer-group"></i> 3.02 Types of Attributes
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-3-03.php" data-page="cert-topic-3-03">
+                    <i class="fas fa-table"></i> 3.03 DB Schema
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-3-04.php" data-page="cert-topic-3-04">
                     <i class="fas fa-database"></i> 3.04 Models & Collections
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-3-05.php" data-page="cert-topic-3-05">
+                    <i class="fas fa-cubes"></i> 3.05 EAV Basics
                 </a>
             </li>
         </ul>
