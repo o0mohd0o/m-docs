@@ -176,26 +176,15 @@ window.questions = [
     explanation: "Observers registered for frontend/adminhtml areas won't fire in cron jobs (crontab area). Use global observers or manually set area."
   },
   {
-    question: "What command lists all registered cron jobs?",
-    options: [
-      "bin/magento cron:show",
-      "bin/magento cron:list",
-      "bin/magento cron:status",
-      "bin/magento cron:info"
-    ],
-    correct: 1,
-    explanation: "bin/magento cron:list shows all registered cron jobs and their schedules."
-  },
-  {
     question: "Which element in crontab.xml specifies when the job should run?",
     options: [
-      "<time>",
-      "<schedule>",
-      "<frequency>",
-      "<when>"
+      "&lt;time&gt;",
+      "&lt;schedule&gt;",
+      "&lt;frequency&gt;",
+      "&lt;when&gt;"
     ],
     correct: 1,
-    explanation: "The <schedule> element in crontab.xml contains the cron expression specifying when the job should run."
+    explanation: "The &lt;schedule&gt; element in crontab.xml contains the cron expression specifying when the job should run."
   },
   {
     question: "What does '0 0 * * 0' mean in cron expression?",

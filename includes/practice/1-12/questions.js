@@ -77,7 +77,7 @@ window.questions = [
         explanation: "The 'collections' cache stores multi-row results from database queries, helping to reduce database load by caching frequently accessed collections."
     },
     {
-        question: "Where is cache configuration stored in Magento 2?",
+        question: "Where are cache types configured/defined in Magento 2?",
         options: [
             "app/etc/cache.xml",
             "etc/config.xml in each module",
@@ -85,7 +85,7 @@ window.questions = [
             "var/cache/config.php"
         ],
         correct: 2,
-        explanation: "Cache configuration is stored in module-specific etc/cache.xml files. Examples include module-eav/etc/cache.xml, module-translation/etc/cache.xml, and module-page-cache/etc/cache.xml."
+        explanation: "Cache types are declared in each module's etc/cache.xml (e.g., module-eav/etc/cache.xml, module-translation/etc/cache.xml). Note: cache storage/backends (e.g., Redis) are configured in app/etc/env.php."
     },
     {
         question: "Which cache type needs to be flushed when adding methods to API service contracts?",

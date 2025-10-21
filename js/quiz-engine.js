@@ -57,6 +57,7 @@ function submitQuiz() {
     // Collect answers
     userAnswers = [];
     let allAnswered = true;
+    let firstUnansweredIndex = null;
 
     questions.forEach((q, index) => {
         const selected = document.querySelector(`input[name="question${index}"]:checked`);
@@ -65,11 +66,20 @@ function submitQuiz() {
         } else {
             userAnswers.push(null);
             allAnswered = false;
+            if (firstUnansweredIndex === null) firstUnansweredIndex = index;
         }
     });
 
     if (!allAnswered) {
-        alert('Please answer all questions before submitting.');
+        const targetCard = document.getElementById(`question-${firstUnansweredIndex}`);
+        if (targetCard) {
+            targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const prevBoxShadow = targetCard.style.boxShadow;
+            targetCard.style.boxShadow = '0 0 0 3px #dc3545 inset';
+            setTimeout(() => { targetCard.style.boxShadow = prevBoxShadow; }, 2000);
+            const firstInput = targetCard.querySelector(`input[name="question${firstUnansweredIndex}"]`);
+            if (firstInput) firstInput.focus();
+        }
         return;
     }
 
@@ -101,11 +111,22 @@ function submitQuiz() {
         // Show correct answer if user was wrong
         if (!isCorrect) {
             const correctOption = document.getElementById(`option-${index}-${correctAnswer}`);
-            correctOption.classList.add('correct-answer');
+            if (correctOption) {
+                correctOption.classList.add('correct-answer');
+            } else {
+                console.warn('Quiz: Missing correct option element', {
+                    questionIndex: index,
+                    correctAnswerIndex: correctAnswer,
+                    question: q && q.question ? q.question : undefined
+                });
+            }
         }
 
         // Show explanation
-        document.getElementById(`explanation-${index}`).classList.add('show');
+        const explanationEl = document.getElementById(`explanation-${index}`);
+        if (explanationEl) {
+            explanationEl.classList.add('show');
+        }
     });
 
     // Calculate score

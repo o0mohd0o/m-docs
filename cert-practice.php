@@ -32,6 +32,21 @@ include 'includes/head.php';
         <p class="text-muted">Choose a topic to start a timed quiz. Each quiz contains multiple questions based on the Adobe Commerce Developer (AD0-E717) exam blueprint.</p>
 
         <div class="practice-grid mt-4">
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-1-all.php">
+            <span class="topic-badge">Section 1</span>
+            <div class="practice-title">Section 1 Review (All Topics)</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>Combined Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-2-all.php">
+            <span class="topic-badge">Section 2</span>
+            <div class="practice-title">Section 2 Review (All Topics)</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>Combined Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-3-all.php">
+            <span class="topic-badge">Section 3</span>
+            <div class="practice-title">Section 3 Review (All Topics)</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>Combined Questions</div>
+          </a>
           <a class="practice-card text-decoration-none text-reset" href="cert-practice-1-01.php">
             <span class="topic-badge">1.01</span>
             <div class="practice-title">File Structure</div>
