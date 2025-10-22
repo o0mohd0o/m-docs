@@ -152,6 +152,46 @@ include 'includes/head.php';
             <div class="practice-title">EAV Basics</div>
             <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
           </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-4-01.php">
+            <span class="topic-badge">4.01</span>
+            <div class="practice-title">CMS Pages & Blocks</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-4-02.php">
+            <span class="topic-badge">4.02</span>
+            <div class="practice-title">Layout XML</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-4-03.php">
+            <span class="topic-badge">4.03</span>
+            <div class="practice-title">Modify Page Style</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-4-04.php">
+            <span class="topic-badge">4.04</span>
+            <div class="practice-title">Theme Structure</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-4-05.php">
+            <span class="topic-badge">4.05</span>
+            <div class="practice-title">JavaScript (Basics)</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-4-06.php">
+            <span class="topic-badge">4.06</span>
+            <div class="practice-title">Customer Data</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-5-01.php">
+            <span class="topic-badge">5.01</span>
+            <div class="practice-title">Cart Components</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-5-02.php">
+            <span class="topic-badge">5.02</span>
+            <div class="practice-title">Cart Promo Rules</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
         </div>
 
         <div class="mt-4">

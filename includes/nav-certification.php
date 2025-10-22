@@ -145,8 +145,48 @@
         <div class="nav-section-title px-3">Domain 4: UI Development (18%)</div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="cert-ui.php" data-page="cert-ui">
+                <a class="nav-link" href="cert-topic-4-01.php" data-page="cert-topic-4-01">
+                    <i class="fas fa-file-alt"></i> 4.01 CMS Pages & Blocks
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-4-02.php" data-page="cert-topic-4-02">
                     <i class="fas fa-paint-brush"></i> 4.02 Layout XML
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-4-03.php" data-page="cert-topic-4-03">
+                    <i class="fas fa-brush"></i> 4.03 Modify Page Style
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-4-04.php" data-page="cert-topic-4-04">
+                    <i class="fas fa-sitemap"></i> 4.04 Theme Structure
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-4-05.php" data-page="cert-topic-4-05">
+                    <i class="fas fa-code"></i> 4.05 JavaScript (Basics)
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-4-06.php" data-page="cert-topic-4-06">
+                    <i class="fas fa-user-check"></i> 4.06 Customer Data
+                </a>
+            </li>
+        </ul>
+
+        <!-- Domain 5: Checkout & Sales -->
+        <div class="nav-section-title px-3">Domain 5: Checkout & Sales</div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-5-01.php" data-page="cert-topic-5-01">
+                    <i class="fas fa-shopping-cart"></i> 5.01 Cart Components
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-5-02.php" data-page="cert-topic-5-02">
+                    <i class="fas fa-tags"></i> 5.02 Cart Promo Rules
                 </a>
             </li>
         </ul>
