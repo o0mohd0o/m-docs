@@ -15,8 +15,12 @@
         
         // Auto-detect navigation type based on page name
         let navFile = 'includes/nav-database.php';
-        if (currentPage.startsWith('cert-')) {
+        if (currentPage.startsWith('cloud-')) {
+            navFile = 'includes/nav-cloud.php';
+        } else if (currentPage.startsWith('cert-')) {
             navFile = 'includes/nav-certification.php';
+        } else if (navType === 'cloud') {
+            navFile = 'includes/nav-cloud.php';
         } else if (navType === 'certification') {
             navFile = 'includes/nav-certification.php';
         }
@@ -40,14 +44,28 @@
         
         // Find and activate the matching nav link
         const navLinks = document.querySelectorAll('.sidebar .nav-link');
+        let activeLink = null;
+        
         navLinks.forEach(link => {
             const linkPage = link.getAttribute('data-page');
             if (linkPage === currentPage) {
                 link.classList.add('active');
+                activeLink = link;
             } else {
                 link.classList.remove('active');
             }
         });
+        
+        // Scroll the active link into view
+        if (activeLink) {
+            // Use setTimeout to ensure DOM is fully rendered
+            setTimeout(() => {
+                activeLink.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 100);
+        }
     }
 
     function initializeNavigation() {

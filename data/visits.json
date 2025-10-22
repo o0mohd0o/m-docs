@@ -1,17 +1,17 @@
 {
-    "total": 424,
+    "total": 446,
     "pages": {
         "cert-topic-1-02": {
             "count": 8,
             "last_visit": "2025-10-21 22:10:04"
         },
         "cert-topic-1-03": {
-            "count": 10,
-            "last_visit": "2025-10-21 04:18:23"
+            "count": 11,
+            "last_visit": "2025-10-22 09:51:41"
         },
         "index": {
-            "count": 36,
-            "last_visit": "2025-10-22 06:39:14"
+            "count": 39,
+            "last_visit": "2025-10-22 11:07:41"
         },
         "eav": {
             "count": 5,
@@ -22,16 +22,16 @@
             "last_visit": "2025-10-21 22:12:07"
         },
         "cert-topic-1-13": {
-            "count": 2,
-            "last_visit": "2025-10-20 11:40:47"
+            "count": 3,
+            "last_visit": "2025-10-22 11:08:31"
         },
         "cert-overview": {
-            "count": 99,
-            "last_visit": "2025-10-22 08:58:00"
+            "count": 102,
+            "last_visit": "2025-10-22 11:29:24"
         },
         "cert-topic-1-01": {
-            "count": 31,
-            "last_visit": "2025-10-22 07:11:39"
+            "count": 33,
+            "last_visit": "2025-10-22 11:30:09"
         },
         "sales": {
             "count": 13,
@@ -50,8 +50,8 @@
             "last_visit": "2025-10-20 21:10:07"
         },
         "cert-practice-2-01": {
-            "count": 4,
-            "last_visit": "2025-10-20 11:25:21"
+            "count": 5,
+            "last_visit": "2025-10-22 11:07:54"
         },
         "database-overview": {
             "count": 12,
@@ -66,8 +66,8 @@
             "last_visit": "2025-10-20 15:59:21"
         },
         "cert-practice-1-02": {
-            "count": 8,
-            "last_visit": "2025-10-21 19:07:34"
+            "count": 9,
+            "last_visit": "2025-10-22 10:41:16"
         },
         "cert-practice-1-04": {
             "count": 1,
@@ -146,8 +146,8 @@
             "last_visit": "2025-10-20 16:41:19"
         },
         "cert-topic-1-08": {
-            "count": 2,
-            "last_visit": "2025-10-20 16:18:18"
+            "count": 3,
+            "last_visit": "2025-10-22 10:20:05"
         },
         "cert-practice-1-05": {
             "count": 2,
@@ -166,16 +166,16 @@
             "last_visit": "2025-10-20 13:56:46"
         },
         "cert-ui": {
-            "count": 7,
-            "last_visit": "2025-10-21 19:06:49"
+            "count": 8,
+            "last_visit": "2025-10-22 10:54:57"
         },
         "cert-practice-1-03": {
-            "count": 2,
-            "last_visit": "2025-10-21 16:39:44"
+            "count": 3,
+            "last_visit": "2025-10-22 10:00:41"
         },
         "cert-topic-3-01": {
-            "count": 3,
-            "last_visit": "2025-10-21 07:03:31"
+            "count": 4,
+            "last_visit": "2025-10-22 11:05:59"
         },
         "cert-practice-3-01": {
             "count": 2,
@@ -226,8 +226,8 @@
             "last_visit": "2025-10-21 19:49:59"
         },
         "cert-topic-4-01": {
-            "count": 2,
-            "last_visit": "2025-10-22 09:35:25"
+            "count": 3,
+            "last_visit": "2025-10-22 11:05:53"
         },
         "cert-practice-4-01": {
             "count": 1,
@@ -254,12 +254,12 @@
             "last_visit": "2025-10-22 09:43:30"
         },
         "cert-topic-6-01": {
-            "count": 1,
-            "last_visit": "2025-10-22 09:43:33"
+            "count": 2,
+            "last_visit": "2025-10-22 11:06:22"
         },
         "cert-topic-5-01": {
-            "count": 1,
-            "last_visit": "2025-10-22 09:43:35"
+            "count": 2,
+            "last_visit": "2025-10-22 11:06:13"
         },
         "cert-topic-5-02": {
             "count": 1,
@@ -292,26 +292,25 @@
         "cert-topic-6-04": {
             "count": 1,
             "last_visit": "2025-10-22 09:44:16"
+        },
+        "cloud-overview": {
+            "count": 2,
+            "last_visit": "2025-10-22 11:06:06"
+        },
+        "cloud-topic-1-01": {
+            "count": 1,
+            "last_visit": "2025-10-22 10:00:18"
         }
     },
     "sessions": {
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-overview": 1761115156,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-overview": 1761131259,
         "3bae0d4bd29bbf0ffcf6f349f9d3f823_index": 1761115068,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice": 1761125743,
         "e37f893adaf12475e340d68fa0db4690_cert-overview": 1761051350,
         "f4480d359c83fc8b6cb9414c54d64111_cert-overview": 1761111964,
         "5b65c9f4595639fc390bbf36eb28f506_cert-practice": 1761073644,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-04": 1761042147,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-05": 1761069110,
         "cb7c96de2ef814e70e05b8173de32bdc_cert-overview": 1761053033,
-        "15b1b1ad7221d369d33dd5360d557c46_cert-overview": 1761041203,
-        "15b1b1ad7221d369d33dd5360d557c46_cert-topic-1-01": 1761041242,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-ui": 1761042150,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-3-05": 1761042157,
-        "caf01f783200152328e500231ad60e1c_cert-overview": 1761045154,
-        "ac637fee2576727776177fb81e703e76_cert-overview": 1761045505,
-        "ac637fee2576727776177fb81e703e76_cert-topic-1-01": 1761045517,
-        "ac637fee2576727776177fb81e703e76_cert-practice": 1761045645,
         "61108dfca84f0a7358634a575ab9532e_cert-overview": 1761048079,
         "61108dfca84f0a7358634a575ab9532e_index": 1761048094,
         "61108dfca84f0a7358634a575ab9532e_database-overview": 1761048107,
@@ -367,11 +366,11 @@
         "4d79bad8fc9ecde13442981a7f5d3ce4_cert-overview": 1761104096,
         "4d79bad8fc9ecde13442981a7f5d3ce4_cert-topic-1-01": 1761104568,
         "fa014e5b676c645d75e6487b9302cf7b_cert-overview": 1761104922,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_index": 1761115154,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_index": 1761131261,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_database-overview": 1761108980,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_sales": 1761108985,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-01": 1761115158,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-01": 1761125725,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-01": 1761131150,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-01": 1761131153,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-4-01": 1761112254,
         "d8051fe05438946128e7471543a6634a_cert-practice": 1761112910,
         "d8051fe05438946128e7471543a6634a_index": 1761113089,
@@ -393,8 +392,8 @@
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-04": 1761126130,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-05": 1761126133,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-06": 1761126210,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-01": 1761126213,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-01": 1761126215,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-01": 1761131182,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-01": 1761131173,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-02": 1761126218,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-03": 1761126221,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-04": 1761126223,
@@ -402,6 +401,19 @@
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-06": 1761126227,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-02": 1761126248,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-03": 1761126253,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-04": 1761126256
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-04": 1761126256,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-03": 1761126701,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cloud-overview": 1761131166,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cloud-topic-1-01": 1761127218,
+        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-03": 1761127241,
+        "d61df6e0d784b15fb0404baadc4308c5_cert-topic-1-08": 1761128405,
+        "5f494af315e0011420aefaffc7225fc4_cert-practice-1-02": 1761129676,
+        "2dac40c73fa2762cef51bb81425b74f8_index": 1761129897,
+        "d61df6e0d784b15fb0404baadc4308c5_cert-ui": 1761130497,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-01": 1761131159,
+        "5f494af315e0011420aefaffc7225fc4_cert-practice-2-01": 1761131274,
+        "af35cac4720a077d4c40235a0a9fa6c8_cert-topic-1-13": 1761131311,
+        "e17e078ce42f9d796ae9fd29e33c158f_cert-overview": 1761132564,
+        "e17e078ce42f9d796ae9fd29e33c158f_cert-topic-1-01": 1761132609
     }
 }

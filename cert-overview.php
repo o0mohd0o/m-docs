@@ -428,42 +428,92 @@ include 'includes/head.php';
                 Exam Topics & Weights
             </h2>
             
+            <div class="alert alert-info mb-4">
+                <i class="fas fa-info-circle"></i> <strong>Note:</strong> The following percentages represent the approximate weight of each domain on the AD0-E717 exam.
+            </div>
+            
             <div class="topic-grid">
                 <div class="topic-card" style="--topic-color: #0d6efd;">
-                    <span class="topic-percentage">33%</span>
-                    <h4>Architecture & Customization</h4>
-                    <p style="color: #666;">Understanding Magento architecture, module development, plugin system, and customization techniques.</p>
+                    <span class="topic-percentage">29%</span>
+                    <h4>Section 2: Architecture</h4>
+                    <p style="color: #666;">File structure, CLI commands, DI, controllers, module structure, indexes, localization, plugins, preferences, observers, caching.</p>
                     <div class="topic-links">
                         <a href="cert-topic-1-01.php" class="topic-link topic-link-primary">Study Architecture</a>
                         <a href="cert-topic-1-04.php" class="topic-link topic-link-secondary">Customization</a>
                     </div>
                 </div>
 
-                <div class="topic-card" style="--topic-color: #198754;">
-                    <span class="topic-percentage">24%</span>
-                    <h4>Database & Data Models</h4>
-                    <p style="color: #666;">Working with database schema, EAV system, data models, collections, and repositories.</p>
+                <div class="topic-card" style="--topic-color: #0dcaf0;">
+                    <span class="topic-percentage">15%</span>
+                    <h4>Section 4: Layout/UI</h4>
+                    <p style="color: #666;">Product types, catalog entities, indexes, price output, multi-source inventory.</p>
                     <div class="topic-links">
-                        <a href="database-overview.php" class="topic-link topic-link-primary">Study Database</a>
-                        <a href="index.php" class="topic-link topic-link-secondary">DB Docs</a>
+                        <a href="cert-topic-4-01.php" class="topic-link topic-link-primary">Study UI</a>
                     </div>
                 </div>
 
-                <div class="topic-card" style="--topic-color: #0dcaf0;">
-                    <span class="topic-percentage">18%</span>
-                    <h4>UI & Frontend Development</h4>
-                    <p style="color: #666;">Layout XML, blocks, templates, JavaScript components, and theme development.</p>
+                <div class="topic-card" style="--topic-color: #198754;">
+                    <span class="topic-percentage">13%</span>
+                    <h4>Section 3: EAV/Database</h4>
+                    <p style="color: #666;">Attribute sets/attributes, DB schema, models, resource models, collections, EAV basics.</p>
                     <div class="topic-links">
-                        <a href="cert-ui.php" class="topic-link topic-link-primary">Study UI</a>
+                        <a href="cert-topic-3-01.php" class="topic-link topic-link-primary">Study EAV</a>
+                        <a href="database-overview.php" class="topic-link topic-link-secondary">DB Docs</a>
+                    </div>
+                </div>
+
+                <div class="topic-card" style="--topic-color: #dc3545;">
+                    <span class="topic-percentage">12%</span>
+                    <h4>Section 7: Cloud Architecture</h4>
+                    <p style="color: #666;">Cloud workflow, project files, services, logs, patches, ECE tools, support tickets.</p>
+                    <div class="topic-links">
+                        <a href="cloud-overview.php" class="topic-link topic-link-primary">Cloud Guide</a>
+                        <a href="cloud-practice.php" class="topic-link topic-link-secondary">Practice</a>
                     </div>
                 </div>
 
                 <div class="topic-card" style="--topic-color: #6f42c1;">
-                    <span class="topic-percentage">25%</span>
-                    <h4>Business Logic & Config</h4>
-                    <p style="color: #666;">Business logic implementation, dependency injection, configuration, and API development.</p>
+                    <span class="topic-percentage">8%</span>
+                    <h4>Section 5: Checkout & Sales</h4>
+                    <p style="color: #666;">Cart components, promo rules, checkout modifications, quote data, payment/shipping, tax.</p>
                     <div class="topic-links">
-                        <a href="cert-topic-1-03.php" class="topic-link topic-link-primary">Study More</a>
+                        <a href="cert-topic-5-01.php" class="topic-link topic-link-primary">Study Checkout</a>
+                    </div>
+                </div>
+
+                <div class="topic-card" style="--topic-color: #20c997;">
+                    <span class="topic-percentage">8%</span>
+                    <h4>Section 6: Catalog</h4>
+                    <p style="color: #666;">Category/product management, product types, price rules, price types.</p>
+                    <div class="topic-links">
+                        <a href="cert-topic-6-01.php" class="topic-link topic-link-primary">Study Catalog</a>
+                    </div>
+                </div>
+
+                <div class="topic-card" style="--topic-color: #fd7e14;">
+                    <span class="topic-percentage">6%</span>
+                    <h4>Section 9: Cloud CLI Tool</h4>
+                    <p style="color: #666;">CLI exclusive features, email activation, rebase, snapshots, db dump, branching, cloud services connection.</p>
+                    <div class="topic-links">
+                        <a href="cloud-overview.php" class="topic-link topic-link-primary">Cloud CLI</a>
+                    </div>
+                </div>
+
+                <div class="topic-card" style="--topic-color: #6610f2;">
+                    <span class="topic-percentage">5%</span>
+                    <h4>Section 1: Working with Admin</h4>
+                    <p style="color: #666;">ACL roles/resources, admin grid/form, store/admin config, menu items.</p>
+                    <div class="topic-links">
+                        <a href="cert-topic-1-02.php" class="topic-link topic-link-primary">Admin Dev</a>
+                    </div>
+                </div>
+
+                <div class="topic-card" style="--topic-color: #d63384;">
+                    <span class="topic-percentage">4%</span>
+                    <h4>Section 8: Cloud Setup/Config</h4>
+                    <p style="color: #666;">Cloud setup, troubleshooting, user management, environment management UI, plan capabilities.</p>
+                    <div class="topic-links">
+                        <a href="cloud-overview.php" class="topic-link topic-link-primary">Cloud Setup</a>
                     </div>
                 </div>
             </div>
@@ -481,6 +531,7 @@ include 'includes/head.php';
                     <tr>
                         <th>Phase</th>
                         <th>Topic</th>
+                        <th>Exam Weight</th>
                         <th>Resources</th>
                         <th>Duration</th>
                     </tr>
@@ -488,36 +539,79 @@ include 'includes/head.php';
                 <tbody>
                     <tr>
                         <td><span class="phase-badge">1</span></td>
-                        <td>Architecture & Module Development</td>
+                        <td>Architecture & Customization</td>
+                        <td><strong>29%</strong></td>
                         <td><a href="cert-topic-1-01.php">Architecture Guide</a></td>
-                        <td>1-2 weeks</td>
+                        <td>2-3 weeks</td>
                     </tr>
                     <tr>
                         <td><span class="phase-badge">2</span></td>
-                        <td>Customization Techniques</td>
-                        <td><a href="cert-topic-1-04.php">Customization Guide</a></td>
+                        <td>Layout/UI Development</td>
+                        <td><strong>15%</strong></td>
+                        <td><a href="cert-topic-4-01.php">UI Guide</a></td>
                         <td>1-2 weeks</td>
                     </tr>
                     <tr>
                         <td><span class="phase-badge">3</span></td>
-                        <td>Database & Models</td>
+                        <td>EAV/Database</td>
+                        <td><strong>13%</strong></td>
                         <td><a href="database-overview.php">Database Guide</a></td>
                         <td>1 week</td>
                     </tr>
                     <tr>
                         <td><span class="phase-badge">4</span></td>
-                        <td>UI Development</td>
-                        <td><a href="cert-ui.php">UI Guide</a></td>
+                        <td>Cloud Architecture (Section 7)</td>
+                        <td><strong>12%</strong></td>
+                        <td><a href="cloud-overview.php">Cloud Architecture</a></td>
                         <td>1 week</td>
                     </tr>
                     <tr>
                         <td><span class="phase-badge">5</span></td>
-                        <td>Practice & Review</td>
+                        <td>Checkout & Sales</td>
+                        <td><strong>8%</strong></td>
+                        <td><a href="cert-topic-5-01.php">Checkout Guide</a></td>
+                        <td>3-5 days</td>
+                    </tr>
+                    <tr>
+                        <td><span class="phase-badge">6</span></td>
+                        <td>Catalog Management</td>
+                        <td><strong>8%</strong></td>
+                        <td><a href="cert-topic-6-01.php">Catalog Guide</a></td>
+                        <td>3-5 days</td>
+                    </tr>
+                    <tr>
+                        <td><span class="phase-badge">7</span></td>
+                        <td>Cloud CLI Tool (Section 9)</td>
+                        <td><strong>6%</strong></td>
+                        <td><a href="cloud-overview.php">Cloud CLI</a></td>
+                        <td>2-3 days</td>
+                    </tr>
+                    <tr>
+                        <td><span class="phase-badge">8</span></td>
+                        <td>Working with Admin (Section 1)</td>
+                        <td><strong>5%</strong></td>
+                        <td><a href="cert-topic-1-02.php">Admin Dev</a></td>
+                        <td>2-3 days</td>
+                    </tr>
+                    <tr>
+                        <td><span class="phase-badge">9</span></td>
+                        <td>Cloud Setup/Config (Section 8)</td>
+                        <td><strong>4%</strong></td>
+                        <td><a href="cloud-overview.php">Cloud Setup</a></td>
+                        <td>1-2 days</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td><span class="phase-badge">10</span></td>
+                        <td><strong>Practice & Review</strong></td>
+                        <td>-</td>
                         <td><a href="cert-practice.php">Practice Questions</a></td>
-                        <td>1 week</td>
+                        <td>1-2 weeks</td>
                     </tr>
                 </tbody>
             </table>
+            <div class="alert alert-success mt-3">
+                <strong><i class="fas fa-clock"></i> Total Study Time:</strong> Approximately 8-12 weeks for comprehensive preparation. Adjust based on your current experience level.
+            </div>
         </div>
 
         <!-- Exam Tips -->
