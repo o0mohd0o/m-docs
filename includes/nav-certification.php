@@ -189,6 +189,36 @@
                     <i class="fas fa-tags"></i> 5.02 Cart Promo Rules
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-5-03.php" data-page="cert-topic-5-03">
+                    <i class="fas fa-shopping-bag"></i> 5.03 Checkout Modifications
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-5-04.php" data-page="cert-topic-5-04">
+                    <i class="fas fa-database"></i> 5.04 Quote Data Usage
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-5-05.php" data-page="cert-topic-5-05">
+                    <i class="fas fa-credit-card"></i> 5.05 Payment & Shipping
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-5-06.php" data-page="cert-topic-5-06">
+                    <i class="fas fa-cog"></i> 5.06 Tax, Currencies, Cart/Checkout
+                </a>
+            </li>
+        </ul>
+
+        <!-- Domain 6: Catalog -->
+        <div class="nav-section-title px-3">Domain 6: Catalog</div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-6-01.php" data-page="cert-topic-6-01">
+                    <i class="fas fa-sitemap"></i> 6.01 Category & Product Management
+                </a>
+            </li>
         </ul>
 
         <!-- Practice & Resources -->

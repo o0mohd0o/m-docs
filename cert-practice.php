@@ -192,6 +192,31 @@ include 'includes/head.php';
             <div class="practice-title">Cart Promo Rules</div>
             <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
           </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-5-03.php">
+            <span class="topic-badge">5.03</span>
+            <div class="practice-title">Checkout Modifications</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-5-04.php">
+            <span class="topic-badge">5.04</span>
+            <div class="practice-title">Quote Data Usage</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-5-05.php">
+            <span class="topic-badge">5.05</span>
+            <div class="practice-title">Payment & Shipping</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-5-06.php">
+            <span class="topic-badge">5.06</span>
+            <div class="practice-title">Tax, Currencies, Cart/Checkout</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-6-01.php">
+            <span class="topic-badge">6.01</span>
+            <div class="practice-title">Category & Product Management</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
         </div>
 
         <div class="mt-4">
