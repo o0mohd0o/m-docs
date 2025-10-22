@@ -219,6 +219,21 @@
                     <i class="fas fa-sitemap"></i> 6.01 Category & Product Management
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-6-02.php" data-page="cert-topic-6-02">
+                    <i class="fas fa-cubes"></i> 6.02 Product Types
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-6-03.php" data-page="cert-topic-6-03">
+                    <i class="fas fa-tags"></i> 6.03 Catalog Price Rules
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cert-topic-6-04.php" data-page="cert-topic-6-04">
+                    <i class="fas fa-dollar-sign"></i> 6.04 Price Types & Calculation
+                </a>
+            </li>
         </ul>
 
         <!-- Practice & Resources -->

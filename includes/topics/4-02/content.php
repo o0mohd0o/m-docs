@@ -14,8 +14,8 @@ mindmap
       Determined from request
       Dynamic handles
       Include handles
-    Files & Merge
-      view/[area]/layout
+    Files and Merge
+      view/area/layout
       Merged by module order
       Override/modify nodes
     Common Directives
@@ -25,9 +25,9 @@ mindmap
       referenceContainer
       move
       remove
-      update handle
+      update
     Caching
-      cacheable="false" risk
+      cacheable false risk
     </div>
 </div>
 

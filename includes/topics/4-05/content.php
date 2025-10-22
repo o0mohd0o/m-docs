@@ -10,16 +10,16 @@ mindmap
   root((Magento JS))
     RequireJS
       Module path
-      Aliases (map)
-      requirejs-config.js
+      Aliases map
+      requirejs config
     Module Types
       Plain AMD modules
       jQuery UI widgets
-      UI Components (uiElement)
+      UI Components uiElement
     Execute
-      data-mage-init
-      x-magento-init
-      Imperative require()
+      data mage init
+      x magento init
+      Imperative require
     Customize
       Fallback override
       Mixins

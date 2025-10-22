@@ -7,11 +7,11 @@
     <h2 style="text-align: center; margin-bottom: 20px;"><i class="fas fa-project-diagram"></i> Category & Product Management</h2>
     <div class="mermaid" style="display: flex; justify-content: center;">
 mindmap
-  root((Category/Product Mgmt))
+  root((Category Product Mgmt))
     Data Interfaces
       CategoryInterface
       Use for type hints
-      Future-proof
+      Future proof
     Implementations
       Category model
       Use when methods not in interface
@@ -20,13 +20,13 @@ mindmap
       CategoryFactory
     Repositories
       CategoryRepositoryInterface
-      save() method
+      save method
     Product Assignment
-      setPostedProducts()
-      getProductsPosition()
+      setPostedProducts
+      getProductsPosition
       CategoryLinkRepository
     Indexing
-      catalog_category_product
+      catalog category product
       Update on Save or Schedule
     URL Rewrites
       CategoryProcessUrlRewriteSavingObserver

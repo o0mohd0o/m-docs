@@ -1,5 +1,5 @@
 {
-    "total": 405,
+    "total": 424,
     "pages": {
         "cert-topic-1-02": {
             "count": 8,
@@ -38,8 +38,8 @@
             "last_visit": "2025-10-22 04:56:25"
         },
         "cert-practice": {
-            "count": 32,
-            "last_visit": "2025-10-22 06:01:50"
+            "count": 33,
+            "last_visit": "2025-10-22 09:35:43"
         },
         "cert-practice-1-08": {
             "count": 2,
@@ -150,16 +150,16 @@
             "last_visit": "2025-10-20 16:18:18"
         },
         "cert-practice-1-05": {
-            "count": 1,
-            "last_visit": "2025-10-20 12:15:34"
+            "count": 2,
+            "last_visit": "2025-10-22 09:25:47"
         },
         "cert-topic-2-03": {
             "count": 5,
             "last_visit": "2025-10-20 17:37:15"
         },
         "cert-topic-1-05": {
-            "count": 3,
-            "last_visit": "2025-10-20 16:39:22"
+            "count": 4,
+            "last_visit": "2025-10-22 09:23:12"
         },
         "cert-practice-2-03": {
             "count": 2,
@@ -226,29 +226,84 @@
             "last_visit": "2025-10-21 19:49:59"
         },
         "cert-topic-4-01": {
-            "count": 1,
-            "last_visit": "2025-10-22 05:48:22"
+            "count": 2,
+            "last_visit": "2025-10-22 09:35:25"
         },
         "cert-practice-4-01": {
             "count": 1,
             "last_visit": "2025-10-22 05:50:54"
+        },
+        "cert-topic-4-02": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:35:50"
+        },
+        "cert-topic-4-03": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:36:01"
+        },
+        "cert-topic-4-04": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:42:10"
+        },
+        "cert-topic-4-05": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:42:13"
+        },
+        "cert-topic-4-06": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:43:30"
+        },
+        "cert-topic-6-01": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:43:33"
+        },
+        "cert-topic-5-01": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:43:35"
+        },
+        "cert-topic-5-02": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:43:38"
+        },
+        "cert-topic-5-03": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:43:41"
+        },
+        "cert-topic-5-04": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:43:43"
+        },
+        "cert-topic-5-05": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:43:45"
+        },
+        "cert-topic-5-06": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:43:47"
+        },
+        "cert-topic-6-02": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:44:08"
+        },
+        "cert-topic-6-03": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:44:13"
+        },
+        "cert-topic-6-04": {
+            "count": 1,
+            "last_visit": "2025-10-22 09:44:16"
         }
     },
     "sessions": {
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-overview": 1761115156,
         "3bae0d4bd29bbf0ffcf6f349f9d3f823_index": 1761115068,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice": 1761112250,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice": 1761125743,
         "e37f893adaf12475e340d68fa0db4690_cert-overview": 1761051350,
         "f4480d359c83fc8b6cb9414c54d64111_cert-overview": 1761111964,
         "5b65c9f4595639fc390bbf36eb28f506_cert-practice": 1761073644,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-04": 1761042147,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-3-05": 1761069110,
-        "ddfd1018a3b639cfbfd6e519eec1dafd_cert-overview": 1761038423,
-        "ddfd1018a3b639cfbfd6e519eec1dafd_cert-topic-1-01": 1761038449,
         "cb7c96de2ef814e70e05b8173de32bdc_cert-overview": 1761053033,
-        "cb7c96de2ef814e70e05b8173de32bdc_cert-practice": 1761038476,
-        "cb7c96de2ef814e70e05b8173de32bdc_cert-practice-1-01": 1761038477,
-        "cb7c96de2ef814e70e05b8173de32bdc_index": 1761038499,
         "15b1b1ad7221d369d33dd5360d557c46_cert-overview": 1761041203,
         "15b1b1ad7221d369d33dd5360d557c46_cert-topic-1-01": 1761041242,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-ui": 1761042150,
@@ -316,7 +371,7 @@
         "bc3f341b3c079e587cc8a2ab3a9e16f2_database-overview": 1761108980,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_sales": 1761108985,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-1-01": 1761115158,
-        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-01": 1761112102,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-01": 1761125725,
         "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-practice-4-01": 1761112254,
         "d8051fe05438946128e7471543a6634a_cert-practice": 1761112910,
         "d8051fe05438946128e7471543a6634a_index": 1761113089,
@@ -330,6 +385,23 @@
         "af35cac4720a077d4c40235a0a9fa6c8_customer": 1761122857,
         "5f494af315e0011420aefaffc7225fc4_eav": 1761123301,
         "20114caf3c4b5dd29ca0a98df9648ab9_cert-overview": 1761123480,
-        "d61df6e0d784b15fb0404baadc4308c5_cms": 1761124172
+        "d61df6e0d784b15fb0404baadc4308c5_cms": 1761124172,
+        "d61df6e0d784b15fb0404baadc4308c5_cert-topic-1-05": 1761124992,
+        "af35cac4720a077d4c40235a0a9fa6c8_cert-practice-1-05": 1761125147,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-02": 1761125750,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-03": 1761125761,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-04": 1761126130,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-05": 1761126133,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-4-06": 1761126210,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-01": 1761126213,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-01": 1761126215,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-02": 1761126218,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-03": 1761126221,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-04": 1761126223,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-05": 1761126225,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-5-06": 1761126227,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-02": 1761126248,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-03": 1761126253,
+        "bc3f341b3c079e587cc8a2ab3a9e16f2_cert-topic-6-04": 1761126256
     }
 }

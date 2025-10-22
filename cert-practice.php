@@ -217,6 +217,21 @@ include 'includes/head.php';
             <div class="practice-title">Category & Product Management</div>
             <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
           </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-6-02.php">
+            <span class="topic-badge">6.02</span>
+            <div class="practice-title">Product Types</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-6-03.php">
+            <span class="topic-badge">6.03</span>
+            <div class="practice-title">Catalog Price Rules</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
+          <a class="practice-card text-decoration-none text-reset" href="cert-practice-6-04.php">
+            <span class="topic-badge">6.04</span>
+            <div class="practice-title">Price Types & Calculation</div>
+            <div class="practice-meta"><i class="far fa-clock me-1"></i>30 Questions</div>
+          </a>
         </div>
 
         <div class="mt-4">
